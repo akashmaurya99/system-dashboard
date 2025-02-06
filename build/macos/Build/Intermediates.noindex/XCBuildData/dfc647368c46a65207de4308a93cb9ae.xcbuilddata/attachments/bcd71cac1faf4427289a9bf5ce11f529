@@ -1,0 +1,10 @@
+framework module appkit_ui_element_colors {
+  umbrella header "appkit_ui_element_colors-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module appkit_ui_element_colors.__Swift {
+  exclude header "appkit_ui_element_colors-Swift.h"
+}
