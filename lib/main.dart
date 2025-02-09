@@ -11,6 +11,7 @@ import 'components/ram_chart_components/ram_provider.dart';
 import 'components/storage_chart_components/storage_provider.dart';
 import 'provider/active_program_provider.dart';
 import 'provider/gpu_provider.dart';
+import 'provider/system_info_provider.dart';
 import 'theme/theme_provider.dart';
 
 void main() async {
@@ -67,8 +68,9 @@ class AppEnteryPoint extends StatelessWidget {
               ChangeNotifierProvider(create: (_) => StorageProvider()),
               ChangeNotifierProvider(create: (_) => RamProvider()),
               ChangeNotifierProvider(create: (_) => ProgramProvider()),
+              ChangeNotifierProvider(create: (_) => SystemInfoProvider()),
             ],
-            child: Platform.isMacOS
+            child: !Platform.isMacOS
                 ? MacosApp(
                     // title: 'My macOS App',
                     debugShowCheckedModeBanner: false,
@@ -79,6 +81,7 @@ class AppEnteryPoint extends StatelessWidget {
                     debugShowCheckedModeBanner: false,
                     // title: 'My Windows App',
                     theme: FluentThemeData(brightness: Brightness.light),
+
                     home: WindowsHomePage(),
                   ));
       });

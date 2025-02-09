@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:system_info/utils/dynamic_size.dart';
 import '../provider/gpu_provider.dart';
 import '../theme/container_color.dart';
+import '../theme/container_radius.dart';
 
 class GPUUsageChart extends StatelessWidget {
   const GPUUsageChart({super.key});
@@ -102,7 +103,7 @@ class GPUUsageChart extends StatelessWidget {
             // height: dynamicHeight(context) * 0.25,
             decoration: BoxDecoration(
               color: ContainerColor.primary,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: ContainerRadius.primary,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),

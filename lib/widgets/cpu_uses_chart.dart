@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:system_info/theme/container_radius.dart';
 import 'package:system_info/utils/dynamic_size.dart';
 import '../provider/cpu_provider.dart';
 import '../theme/container_color.dart';
@@ -102,7 +103,7 @@ class CPUUsageChart extends StatelessWidget {
             // height: dynamicHeight(context) * 0.25,
             decoration: BoxDecoration(
               color: ContainerColor.primary,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: ContainerRadius.primary,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),

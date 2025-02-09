@@ -18,13 +18,20 @@ class ActiveProgramsList extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Active Programs",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        "Active Programs",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 12),
                   Expanded(
@@ -40,11 +47,11 @@ class ActiveProgramsList extends StatelessWidget {
                             itemBuilder: (context, index) {
                               final program = provider.programs[index];
                               return Card(
-                                color: Colors.transparent,
-                                // shape: RoundedRectangleBorder(
-                                //   borderRadius: BorderRadius.circular(
-                                //       20), // Custom border radius
-                                // ),
+                                color: ContainerColor.primary,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: ContainerRadius
+                                        .secondry // Custom border radius
+                                    ),
                                 // elevation: 2,
 
                                 // shadowColor: Colors.black.withOpacity(0.3),
@@ -65,8 +72,7 @@ class ActiveProgramsList extends StatelessWidget {
                                       ),
                                       title: Text(
                                         program.name,
-                                        style: const TextStyle(
-                                            color: Colors.white, fontSize: 14),
+                                        style: const TextStyle(fontSize: 14),
                                       ),
                                       backgroundColor: ContainerColor.primary,
                                       collapsedBackgroundColor:
@@ -82,8 +88,8 @@ class ActiveProgramsList extends StatelessWidget {
                                       subtitle: Text(
                                         "PID: ${program.pid} • CPU: ${program.cpuUsage.toStringAsFixed(2)}% • Memory: ${(program.memoryUsage / 1024).toStringAsFixed(1)} MB",
                                         style: const TextStyle(
-                                            fontSize: 10,
-                                            color: Colors.white70),
+                                          fontSize: 10,
+                                        ),
                                       ),
                                       children: [
                                         _infoTile("Executable Path",
@@ -129,11 +135,11 @@ class ActiveProgramsList extends StatelessWidget {
           children: [
             Text(
               "$title: ",
-              style: const TextStyle(color: Colors.white70, fontSize: 13),
+              style: const TextStyle(fontSize: 13),
             ),
             Text(
               value,
-              style: const TextStyle(color: Colors.white60, fontSize: 11),
+              style: const TextStyle(fontSize: 11),
             ),
           ],
         ),
