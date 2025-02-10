@@ -1,12 +1,21 @@
 #ifndef OS_INFO_H
 #define OS_INFO_H
 
-#include <string>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-std::string getOsInfoJson();
+// Get OS information in JSON format
+__attribute__((visibility("default"))) char* getOsInfoJson();
+
+// Free allocated memory for FFI
+__attribute__((visibility("default"))) void free_cstr(char* ptr);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // OS_INFO_H
-
 
 
 
@@ -14,10 +23,8 @@ std::string getOsInfoJson();
 // #ifndef OS_INFO_H
 // #define OS_INFO_H
 
-// using namespace std;
-
 // #include <string>
 
-// string getOsInfoJson();
+// std::string getOsInfoJson();
 
-// #endif
+// #endif // OS_INFO_H

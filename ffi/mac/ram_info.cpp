@@ -1,4 +1,4 @@
-#include "../include/ram_info.h"
+#include "include/ram_info.h"
 #include <iostream>
 #include <sys/sysctl.h>
 #include <mach/mach.h>
@@ -11,7 +11,7 @@
 using namespace std;
 
 // Function to get Total RAM Size (in GB)
-double getTotalRAMSize() {
+static double getTotalRAMSize() {
     int64_t ramSize;
     size_t size = sizeof(ramSize);
     if (sysctlbyname("hw.memsize", &ramSize, &size, NULL, 0) == 0) {
@@ -21,7 +21,7 @@ double getTotalRAMSize() {
 }
 
 // Function to get Used RAM (in MB)
-double getUsedRAM() {
+static double getUsedRAM() {
     mach_msg_type_number_t count = HOST_VM_INFO64_COUNT;
     vm_statistics64_data_t vmStats;
     mach_port_t hostPort = mach_host_self();
@@ -35,7 +35,7 @@ double getUsedRAM() {
 }
 
 // Function to get Free RAM (in MB)
-double getFreeRAM() {
+static double getFreeRAM() {
     mach_msg_type_number_t count = HOST_VM_INFO64_COUNT;
     vm_statistics64_data_t vmStats;
     mach_port_t hostPort = mach_host_self();
@@ -47,7 +47,7 @@ double getFreeRAM() {
 }
 
 // Function to extract key-value pairs from system_profiler output
-string getRAMDetailsFormatted() {
+static string getRAMDetailsFormatted() {
     FILE *pipe = popen("system_profiler SPMemoryDataType", "r");
     if (!pipe) return "Error fetching RAM details";
 
@@ -83,7 +83,7 @@ string getRAMDetailsFormatted() {
 }
 
 // Function to format RAM info in JSON format
-string getRAMInfoJSON() {
+static string generateRAMInfoJSON() {
     ostringstream json;
     json << "{";
     json << "\"Total_RAM_GB\": " << getTotalRAMSize() << ", ";
@@ -95,8 +95,20 @@ string getRAMInfoJSON() {
     return json.str();
 }
 
-// // Main function for testing
-// int main() {
-//     cout << getRAMInfoJSON() << endl;
-//     return 0;
+
+// FFI-Compatible Wrapper
+extern "C" __attribute__((visibility("default"))) char* getRAMInfoJSON() {
+    string result = generateRAMInfoJSON();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
+//     }
 // }

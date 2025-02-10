@@ -1,12 +1,21 @@
 #ifndef RAM_INFO_H
 #define RAM_INFO_H
 
-#include <string>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-std::string getRAMInfoJSON();
+// Get RAM information in JSON format
+__attribute__((visibility("default"))) char* getRAMInfoJSON();
+
+// Free allocated memory for FFI
+__attribute__((visibility("default"))) void free_cstr(char* ptr);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // RAM_INFO_H
-
 
 
 
@@ -16,10 +25,8 @@ std::string getRAMInfoJSON();
 // #ifndef RAM_INFO_H
 // #define RAM_INFO_H
 
-// using namespace std;
-
 // #include <string>
 
-// string getRAMInfoJSON();
+// std::string getRAMInfoJSON();
 
-// #endif
+// #endif // RAM_INFO_H

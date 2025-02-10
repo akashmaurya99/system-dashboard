@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../services/macos_system_info.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,70 +13,60 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mac System Info',
-      home: Scaffold(
-        appBar: AppBar(title: Text('Mac System Info')),
-        body: SystemInfoWidget(),
-      ),
+      theme: ThemeData.dark(),
+      home: const SystemInfoScreen(),
     );
   }
 }
 
-class SystemInfoWidget extends StatefulWidget {
-  const SystemInfoWidget({super.key});
+class SystemInfoScreen extends StatefulWidget {
+  const SystemInfoScreen({super.key});
 
   @override
-  _SystemInfoWidgetState createState() => _SystemInfoWidgetState();
+  _SystemInfoScreenState createState() => _SystemInfoScreenState();
 }
 
-class _SystemInfoWidgetState extends State<SystemInfoWidget> {
-  String _diskUsage = '';
-  String _batteryInfo = '';
-  String _cpuInfo = '';
-  String _gpuInfo = '';
+class _SystemInfoScreenState extends State<SystemInfoScreen> {
+  final MacSystemInfo _systemInfo = MacSystemInfo();
+  String _cpuInfo = 'Fetching...';
+  double _cpuUsage = 0.0;
+  String _ramInfo = 'Fetching...';
 
   @override
   void initState() {
     super.initState();
-    loadSystemInfo();
+    _fetchSystemInfo();
   }
 
-  void loadSystemInfo() {
+  void _fetchSystemInfo() async {
     setState(() {
-      _diskUsage = MacSystemInfo.getDiskUsage();
-      _batteryInfo = MacSystemInfo.getBatteryInfo();
-      _cpuInfo = MacSystemInfo.getCPUInfo();
-      _gpuInfo = MacSystemInfo.getGPUInfo();
+      _cpuInfo = _systemInfo.getCpuInfo();
+      _cpuUsage = _systemInfo.getCpuUsage();
+      _ramInfo = _systemInfo.getRamInfo();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(title: const Text('Mac System Info')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('🖥 CPU Info:', style: TextStyle(fontWeight: FontWeight.bold)),
-            Text(_cpuInfo),
-            SizedBox(height: 10),
-            Text('🎮 GPU Info:', style: TextStyle(fontWeight: FontWeight.bold)),
-            Text(_gpuInfo),
-            SizedBox(height: 10),
-            Text('🔋 Battery Info:',
-                style: TextStyle(fontWeight: FontWeight.bold)),
-            Text(_batteryInfo),
-            SizedBox(height: 10),
-            Text('💾 Disk Usage:',
-                style: TextStyle(fontWeight: FontWeight.bold)),
-            Text(_diskUsage),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: loadSystemInfo,
-              child: Text('Refresh'),
-            ),
+            Text('CPU Info: $_cpuInfo', style: const TextStyle(fontSize: 16)),
+            const SizedBox(height: 10),
+            Text('CPU Usage: ${_cpuUsage.toStringAsFixed(2)}%',
+                style: const TextStyle(fontSize: 16)),
+            const SizedBox(height: 10),
+            Text('RAM Info: $_ramInfo', style: const TextStyle(fontSize: 16)),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _fetchSystemInfo,
+        child: const Icon(Icons.refresh),
       ),
     );
   }

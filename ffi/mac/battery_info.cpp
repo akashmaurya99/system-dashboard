@@ -1,4 +1,4 @@
-#include "../include/battery_info.h"
+#include "include/battery_info.h"
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
@@ -61,7 +61,7 @@ static string extractStringValue(const string& data, const string& key) {
     return "Unknown";
 }
 
-string displayBatteryInfo() {
+static string displayBatteryInfo() {
     while (true) {
         string batteryData = execCommand("ioreg -rn AppleSmartBattery");
 
@@ -210,14 +210,20 @@ if (designCapacity != "Unknown" && actualMaxCapacity != "Unknown" && cycleCount 
 }
 
 
+extern "C" __attribute__((visibility("default"))) char* getBatteryInfo() {
+    std::string data = displayBatteryInfo();
+    char* cstr = (char*)malloc(data.size() + 1);
+    if (cstr) {
+        strcpy(cstr, data.c_str());
+    }
+    return cstr;
+}
 
 
-// int main() {
-//     while(true){
-//    cout<< displayBatteryInfo();
-//     // **Wait for 5 seconds before refreshing**
 
-//     this_thread::sleep_for(chrono::seconds(5));
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
 //     }
-//     return 0;
 // }

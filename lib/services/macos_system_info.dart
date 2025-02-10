@@ -2,67 +2,125 @@ import 'dart:ffi';
 import 'dart:io';
 import 'package:ffi/ffi.dart';
 
-// Function to get the correct library path dynamically
-String getLibraryPath() {
-  if (!Platform.isMacOS) {
-    throw UnsupportedError('This library is only supported on macOS.');
+/// Load the shared library
+final DynamicLibrary _lib = () {
+  if (Platform.isMacOS) {
+    // Get the absolute path of the library inside the Flutter macOS bundle
+    return DynamicLibrary.open("libmac_system_info.dylib");
+  } else {
+    throw UnsupportedError('This FFI module only supports macOS.');
   }
+}();
 
-  // Resolving the correct path inside the macOS app bundle
-  String executablePath = Platform.resolvedExecutable;
-  String appDir = File(executablePath).parent.path;
-  String dylibPath = '$appDir/libmac_system_info.dylib';
-
-  if (!File(dylibPath).existsSync()) {
-    throw Exception('Dynamic library not found at: $dylibPath');
-  }
-
-  return dylibPath;
-}
-
-// Load the shared library
-final DynamicLibrary systemInfoLib = DynamicLibrary.open(getLibraryPath());
-
-// Define FFI function signatures
-typedef GetInfoNative = Pointer<Utf8> Function();
-typedef GetInfoDart = Pointer<Utf8> Function();
-
-// Bind the C++ functions
+/// Define C function signatures and Dart FFI bindings
 class MacSystemInfo {
-  static final GetInfoDart _getDiskUsage =
-      systemInfoLib.lookupFunction<GetInfoNative, GetInfoDart>('getDiskUsage');
+  /// Singleton instance
+  static final MacSystemInfo _instance = MacSystemInfo._internal();
+  factory MacSystemInfo() => _instance;
+  MacSystemInfo._internal();
 
-  static final GetInfoDart _getBatteryInfo = systemInfoLib
-      .lookupFunction<GetInfoNative, GetInfoDart>('displayBatteryInfo');
+  /// Memory cleanup function
+  final void Function(Pointer<Utf8>) _freeCStr = _lib.lookupFunction<
+      Void Function(Pointer<Utf8>), void Function(Pointer<Utf8>)>('free_cstr');
 
-  static final GetInfoDart _getCPUInfo =
-      systemInfoLib.lookupFunction<GetInfoNative, GetInfoDart>('getCPUInfo');
-
-  static final GetInfoDart _getGPUInfo =
-      systemInfoLib.lookupFunction<GetInfoNative, GetInfoDart>('getGPUInfo');
-
-  // Utility method to safely convert FFI Pointer<Utf8> to Dart String
-  static String _convertPointerToString(Pointer<Utf8> ptr) {
-    try {
-      return ptr.toDartString();
-    } finally {
-      malloc.free(ptr);
-    }
+  /// Helper function to convert a C-string pointer to a Dart string
+  String _getString(Pointer<Utf8> ptr) {
+    final result = ptr.toDartString();
+    _freeCStr(ptr);
+    return result;
   }
 
-  static String getDiskUsage() {
-    return _convertPointerToString(_getDiskUsage());
+  /// Battery Info
+  String getBatteryInfo() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'batteryInfo')();
+    return _getString(ptr);
   }
 
-  static String getBatteryInfo() {
-    return _convertPointerToString(_getBatteryInfo());
+  /// CPU Info
+  String getCpuInfo() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'cpuData')();
+    return _getString(ptr);
   }
 
-  static String getCPUInfo() {
-    return _convertPointerToString(_getCPUInfo());
+  /// CPU Usage (Real-time)
+  double getCpuUsage() {
+    return _lib
+        .lookupFunction<Double Function(), double Function()>('cpuUsages')();
   }
 
-  static String getGPUInfo() {
-    return _convertPointerToString(_getGPUInfo());
+  /// Disk Details
+  String getDiskDetails() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'diskDetails')();
+    return _getString(ptr);
+  }
+
+  /// Disk Speed
+  String getDiskSpeed() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'diskSpeed')();
+    return _getString(ptr);
+  }
+
+  /// Disk Usage (Pass disk path as argument)
+  String getDiskUsage(String diskPath) {
+    final diskPathPtr = diskPath.toNativeUtf8();
+    final ptr = _lib.lookupFunction<Pointer<Utf8> Function(Pointer<Utf8>),
+        Pointer<Utf8> Function(Pointer<Utf8>)>('diskUsages')(diskPathPtr);
+    malloc.free(diskPathPtr);
+    return _getString(ptr);
+  }
+
+  /// GPU Info
+  String getGpuInfo() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'gpuInfo')();
+    return _getString(ptr);
+  }
+
+  /// GPU Usage
+  double getGpuUsage() {
+    return _lib
+        .lookupFunction<Double Function(), double Function()>('gpuUsages')();
+  }
+
+  /// OS Info
+  String getOsInfo() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'osInfo')();
+    return _getString(ptr);
+  }
+
+  /// RAM Info
+  String getRamInfo() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'ramInfo')();
+    return _getString(ptr);
+  }
+
+  /// Installed Applications
+  String getInstalledApplications() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'installedApplications')();
+    return _getString(ptr);
+  }
+
+  /// Running Processes
+  String getRunningProcesses() {
+    final ptr =
+        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
+            'runningProcesses')();
+
+    return _getString(ptr);
   }
 }

@@ -134,9 +134,9 @@ class GPUUsageChart extends StatelessWidget {
                   height: dynamicHeight(context) * 0.15,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: provider.cpuData.isNotEmpty
+                    child: provider.gpuData.isNotEmpty
                         ? LineChart(
-                            _buildChartData(context, provider.cpuData,
+                            _buildChartData(context, provider.gpuData,
                                 provider.currentTime, provider.maxWindow),
                             duration: const Duration(milliseconds: 300),
                           )

@@ -1,4 +1,4 @@
-#include "../include/os_info.h"
+#include "include/os_info.h"
 #include <iostream>
 #include <cstdlib>
 #include <sstream>
@@ -23,13 +23,13 @@ static string execCommand(const char* cmd) {
 }
 
 // Get macOS system details
-string getOSName() { return execCommand("sw_vers -productName"); }
-string getOSVersion() { return execCommand("sw_vers -productVersion"); }
-string getKernelVersion() { return execCommand("uname -r"); }
-string getSystemUptime() { return execCommand("uptime | awk -F', ' '{print $1}'"); }
+static string getOSName() { return execCommand("sw_vers -productName"); }
+static string getOSVersion() { return execCommand("sw_vers -productVersion"); }
+static string getKernelVersion() { return execCommand("uname -r"); }
+static string getSystemUptime() { return execCommand("uptime | awk -F', ' '{print $1}'"); }
 
 // Get Timezone
-string getTimezone() {
+static string getTimezone() {
     string timezone = execCommand("systemsetup -gettimezone 2>/dev/null | awk '{print $NF}'");
     if (timezone.empty() || timezone == "exiting!") {
         timezone = execCommand("readlink /etc/localtime | awk -F'/' '{print $NF}'");
@@ -38,20 +38,20 @@ string getTimezone() {
 }
 
 // Get Boot Time
-string getBootTime() {
+static string getBootTime() {
     string timestamp = execCommand("sysctl -n kern.boottime | awk '{print $4}' | tr -d ,");
     if (timestamp.empty()) return "Unknown";
     return execCommand(("date -r " + timestamp + " '+%Y-%m-%d %H:%M:%S'").c_str());
 }
 
 // Get System Language
-string getSystemLanguage() {
+static string getSystemLanguage() {
     string lang = execCommand("defaults read -g AppleLanguages | awk 'NR==2' | tr -d '(),\"'");
     return lang.empty() ? "Unknown" : lang;
 }
 
 // Get Friendly Mac Model Name (e.g., "MacBook Air (M1, 2020)")
-string getMacModel() {
+static string getMacModel() {
     string model = execCommand("system_profiler SPHardwareDataType | awk -F\": \" '/Model Name/ {print $2}'");
     string chip = execCommand("system_profiler SPHardwareDataType | awk -F\": \" '/Chip/ {print $2}'");
 
@@ -65,7 +65,7 @@ string getMacModel() {
 
 
 // Function to return system information as a JSON string
-string getOsInfoJson() {
+static string generateOsInfoJson() {
     ostringstream json;
     json << "{\n";
     json << "  \"PC Model\": \"" << getMacModel() << "\",\n";
@@ -81,8 +81,20 @@ string getOsInfoJson() {
 }
 
 
-// int main() {
-//     string jsonData = getSystemInfoJson();
-//     cout << jsonData << endl;
-//     return 0;
+
+// FFI-Compatible Wrapper
+extern "C" __attribute__((visibility("default"))) char* getOsInfoJson() {
+    string result = generateOsInfoJson();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
+//     }
 // }

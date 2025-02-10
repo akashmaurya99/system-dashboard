@@ -1,12 +1,25 @@
 #ifndef RUNNING_APP_INFO_H
 #define RUNNING_APP_INFO_H
 
-#include <string>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-std::string getInstalledApplicationsJSON();
-std::string getRunningProcessesJSON();
+// Get installed applications in JSON format
+__attribute__((visibility("default"))) char* getInstalledApplicationsJSON();
+
+// Get running processes in JSON format
+__attribute__((visibility("default"))) char* getRunningProcessesJSON();
+
+// Free allocated memory for FFI
+__attribute__((visibility("default"))) void free_cstr(char* ptr);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // RUNNING_APP_INFO_H
+
 
 
 
@@ -14,11 +27,9 @@ std::string getRunningProcessesJSON();
 // #ifndef RUNNING_APP_INFO_H
 // #define RUNNING_APP_INFO_H
 
-// using namespace std;
-
 // #include <string>
 
-// string getInstalledApplicationsJSON();
-// string getRunningProcessesJSON();
+// std::string getInstalledApplicationsJSON();
+// std::string getRunningProcessesJSON();
 
-// #endif
+// #endif // RUNNING_APP_INFO_H

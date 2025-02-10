@@ -5,7 +5,7 @@ import 'package:system_info/theme/container_color.dart';
 import 'package:system_info/theme/container_radius.dart';
 import 'package:system_info/utils/dynamic_size.dart';
 import '../components/storage_chart_components/storage_legend.dart';
-import '../components/storage_chart_components/storage_provider.dart';
+import '../provider/storage_provider.dart';
 
 class StoragePieChart extends StatelessWidget {
   const StoragePieChart({super.key});

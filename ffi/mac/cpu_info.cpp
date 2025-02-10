@@ -1,4 +1,4 @@
-#include "../include/cpu_info.h"
+#include "include/cpu_info.h"
 #include <iostream>
 #include <sys/sysctl.h>
 #include <mach/mach.h>
@@ -7,12 +7,15 @@
 #include <iomanip>
 #include <sstream>
 #include <ctime>
+#include "include/strdup_cstr.h"
+
 
 
 using namespace std;
 
+
 // Function to get sysctl integer values
-uint64_t getSysctlValue(const char* name) {
+static uint64_t getSysctlValue(const char* name) {
     uint64_t value = 0;
     size_t size = sizeof(value);
     if (sysctlbyname(name, &value, &size, NULL, 0) == 0) {
@@ -22,7 +25,7 @@ uint64_t getSysctlValue(const char* name) {
 }
 
 // Function to get CPU Model
-string getCPUModel() {
+static string getCPUModel() {
     char model[256];
     size_t size = sizeof(model);
     if (sysctlbyname("machdep.cpu.brand_string", model, &size, NULL, 0) == 0) {
@@ -32,7 +35,7 @@ string getCPUModel() {
 }
 
 // Function to detect Apple Silicon
-string getCPUArchitecture() {
+static string getCPUArchitecture() {
     int isARM64 = 0;
     size_t size = sizeof(isARM64);
     sysctlbyname("hw.optional.arm64", &isARM64, &size, NULL, 0);
@@ -40,12 +43,12 @@ string getCPUArchitecture() {
 }
 
 // Function to get CPU core count
-int getCPUCoreCount() {
+static int getCPUCoreCount() {
     return static_cast<int>(getSysctlValue("hw.logicalcpu"));
 }
 
 // Function to get L1, L2, and L3 cache sizes
-void getCPUCacheSizes(uint64_t& L1, uint64_t& L2, uint64_t& L3) {
+static void getCPUCacheSizes(uint64_t& L1, uint64_t& L2, uint64_t& L3) {
     L1 = getSysctlValue("hw.l1dcachesize");  // Data cache
     L2 = getSysctlValue("hw.l2cachesize");
     
@@ -59,7 +62,7 @@ void getCPUCacheSizes(uint64_t& L1, uint64_t& L2, uint64_t& L3) {
 }
 
 // Function to get real-time CPU usage
-double getCPUUsage() {
+ double getCPUUsage() {
     static uint64_t prevUser = 0, prevSystem = 0, prevIdle = 0, prevNice = 0;
 
     mach_msg_type_number_t count = HOST_CPU_LOAD_INFO_COUNT;
@@ -86,50 +89,36 @@ double getCPUUsage() {
     return (total > 0) ? (100.0 * static_cast<double>(totalDiff) / static_cast<double>(total)) : 0.0;
 }
 
-// cpu related data in json formate
-
-string jsonCpuData() {
-    stringstream json;
-    json << "{\n";
-    json << "  \"CPU Model\": \"" << getCPUModel() << "\",\n";
-    json << "  \"CPU Architecture\": \"" << getCPUArchitecture() << "\",\n";
-    json << "  \"CPU Cores\": " << getCPUCoreCount() << ",\n";
-    json << "  \"Base Clock Speed\": \"N/A (Apple Silicon does not expose this)\",\n";
+// Function to return CPU information in JSON format
+extern "C" __attribute__((visibility("default"))) char* getJsonCpuData() {
+    stringstream jsonStream;
     
+    jsonStream << "{\n";
+    jsonStream << "  \"CPU Model\": \"" << getCPUModel() << "\",\n";
+    jsonStream << "  \"CPU Architecture\": \"" << getCPUArchitecture() << "\",\n";
+    jsonStream << "  \"CPU Cores\": " << getCPUCoreCount() << ",\n";
+    jsonStream << "  \"Base Clock Speed\": \"N/A (Apple Silicon does not expose this)\",\n";
+
     uint64_t L1, L2, L3;
     getCPUCacheSizes(L1, L2, L3);
-    json << "  \"L1 Cache\": " << L1 / 1024 << ",\n";
-    json << "  \"L2 Cache\": " << L2 / (1024 * 1024) << ",\n";
-    json << "  \"L3 Cache\": " << (L3 ? L3 / (1024 * 1024) : 0) << ",\n";
-    json << "\n}\n";
-    
-    return json.str();
+
+    jsonStream << "  \"L1 Cache\": " << L1 / 1024 << " KiB,\n";
+    jsonStream << "  \"L2 Cache\": " << L2 / (1024 * 1024) << " MiB,\n";
+    jsonStream << "  \"L3 Cache\": " << (L3 ? L3 / (1024 * 1024) : 0) << " MiB\n";
+    jsonStream << "}";
+
+    return strdup_cstr(jsonStream.str());
 }
 
 
-// void jsonCpuUtilizationData(){
+// Expose real-time CPU usage function
+extern "C" __attribute__((visibility("default"))) double getCPUUsageExtern() {
+    return getCPUUsage();
+}
 
-//     cout << "{\n";
-    
-//     cout << "  \"Real-time CPU Usage\": [\n";
-    
-//     bool first_entry = true;
-//     while (true) {
-//         double usage = getCPUUsage();
-//         if (usage >= 0) {
-//             if (!first_entry) cout << ",\n";
-//             first_entry = false;
-//             cout << "    { \"Time\": " << time(nullptr) << ", \"CPU Usage\": " << fixed << setprecision(2) << usage << " }";
-//         }
-//         usleep(200000); // Sleep for 200ms
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
 //     }
-    
-//     cout << "\n  ]\n}";
-
-// }
-
-// int main(){
-//    cout<< jsonCpuData();
-//     jsonCpuUtilizationData();
-//     return 0;
 // }

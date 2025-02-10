@@ -1,4 +1,4 @@
-#include "../include/gpu_info.h"
+#include "include/gpu_info.h"
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -36,7 +36,7 @@ static string trim(const string& str) {
 
 
 // Function to extract GPU information
-string extract_gpu_info() {
+static string extract_gpu_info() {
     string output = exec("system_profiler SPDisplaysDataType");
     ostringstream json;
     json << "{\n";
@@ -105,7 +105,7 @@ string extract_gpu_info() {
 
 
 // Function to get GPU utilization in percentage
-double getGPUUsage() {
+static double getGPUUsage() {
     static int prevBusyCount = 0;
 
     // Extract fBusyCount
@@ -139,3 +139,26 @@ double getGPUUsage() {
 
     return utilization;
 }
+
+
+
+// FFI-Compatible Wrappers
+extern "C" __attribute__((visibility("default"))) char* getGPUInfo() {
+    string result = extract_gpu_info();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+extern "C" __attribute__((visibility("default"))) double calculateGPUUsage() {
+    return getGPUUsage();
+}
+
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
+//     }
+// }

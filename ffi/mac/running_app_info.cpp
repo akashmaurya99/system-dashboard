@@ -1,4 +1,4 @@
-#include "../include/running_app_info.h"
+#include "include/running_app_info.h"
 #include <iostream>
 #include <iomanip>
 #include <sstream>
@@ -34,7 +34,7 @@ static string execCommand(const char* cmd) {
 }
 
 // Function to extract installed applications and return JSON
-string getInstalledApplicationsJSON() {
+static string getInstalledApplicationsJSON_Internal() {
     vector<string> apps;
     string output = execCommand("mdfind 'kMDItemContentType == \"com.apple.application-bundle\"'");
     stringstream ss(output);
@@ -63,7 +63,7 @@ string getInstalledApplicationsJSON() {
 }
 
 // Function to get running processes and return JSON
-string getRunningProcessesJSON() {
+static string getRunningProcessesJSON_Internal() {
     vector<ProcessInfo> processes;
     FILE *fp = popen("ps -axo pid,comm,%cpu,%mem,user,etime,nthr | sort -k3 -nr", "r");
     if (!fp) return "{}";
@@ -103,14 +103,30 @@ string getRunningProcessesJSON() {
     return json.str();
 }
 
-// // Main function
-// int main() {
-//     cout << getInstalledApplicationsJSON() << endl;
-//     while (true) {
-//         system("clear"); // Clear screen before refreshing
-//         cout << getRunningProcessesJSON() << endl;
 
-//         sleep(3); // Refresh every 3 seconds
+// FFI-Compatible Wrapper
+extern "C" __attribute__((visibility("default"))) char* getInstalledApplicationsJSON() {
+    string result = getInstalledApplicationsJSON_Internal();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+// FFI-Compatible Wrapper
+extern "C" __attribute__((visibility("default"))) char* getRunningProcessesJSON() {
+    string result = getRunningProcessesJSON_Internal();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
 //     }
-//     return 0;
 // }

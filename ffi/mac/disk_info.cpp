@@ -1,4 +1,4 @@
-#include "../include/disk_info.h"
+#include "include/disk_info.h"
 #include <iostream>
 #include <sys/mount.h>
 #include <cstdlib>
@@ -24,7 +24,7 @@ static string execCommand(const char* cmd) {
 }
 
 // Function to Get Disk Size and Usage
-string getDiskUsage(const string &diskPath) {
+static string getDiskUsage(const string &diskPath) {
     struct statfs stat;
     if (statfs(diskPath.c_str(), &stat) == 0) {
         unsigned long long total_bytes = stat.f_blocks * stat.f_bsize;
@@ -47,7 +47,7 @@ string getDiskUsage(const string &diskPath) {
 }
 
 // Function to Measure Disk Speed using 'dd' and return result as string
-string getDiskSpeed() {
+static string getDiskSpeed() {
     string writeSpeed = execCommand("dd if=/dev/zero of=./speedtest bs=1m count=1024 oflag=sync 2>&1 | grep -Eo '[0-9]+ bytes/sec' | awk '{print $1 / 1048576 \" MB/s\"}'");
     string readSpeed = execCommand("dd if=./speedtest of=/dev/null bs=1m count=1024 2>&1 | grep -Eo '[0-9]+ bytes/sec' | awk '{print $1 / 1048576 \" MB/s\"}'");
     system("rm -f ./speedtest"); // Clean up temp file
@@ -61,7 +61,8 @@ string getDiskSpeed() {
 }
 
 // Function to Get Detailed Disk Info
-string getDiskDetails() {
+
+static string getDiskDetails() {
     string diskInfo = execCommand("diskutil info / | grep -E 'Device Name|Media Name|Medium Type|Protocol|S.M.A.R.T. Status|File System|Mount Point|Volume Name|Disk Size|Block Size|Allocation Block Size'");
 
     ostringstream oss;
@@ -85,10 +86,37 @@ string getDiskDetails() {
     return result;
 }
 
-// int main() {
-//     cout << "Disk Usage:\n" << getDiskUsage("/") << "\n\n";
-//     cout << "Disk Speed:\n" << getDiskSpeed() << "\n\n";
-//     cout << "Disk Details:\n" << getDiskDetails() << "\n";
+extern "C" __attribute__((visibility("default"))) char* getDiskUsageInternal(const char* diskPath) {
+    string result = getDiskUsage(diskPath);
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
 
-//     return 0;
+extern "C" __attribute__((visibility("default"))) char* getDiskSpeedInternal() {
+    string result = getDiskSpeed();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+extern "C" __attribute__((visibility("default"))) char* getDiskDetailsInternal() {
+    string result = getDiskDetails();
+    char* cstr = (char*)malloc(result.size() + 1);
+    if (cstr) {
+        strcpy(cstr, result.c_str());
+    }
+    return cstr;
+}
+
+// // Free allocated memory
+// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
+//     if (ptr) {
+//         free(ptr);
+//     }
 // }
+

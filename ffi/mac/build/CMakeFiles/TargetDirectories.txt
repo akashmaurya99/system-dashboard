@@ -1,3 +1,0 @@
-/Users/akashmaurya/Documents/system_info/ffi/mac/build/CMakeFiles/mac_system_info.dir
-/Users/akashmaurya/Documents/system_info/ffi/mac/build/CMakeFiles/edit_cache.dir
-/Users/akashmaurya/Documents/system_info/ffi/mac/build/CMakeFiles/rebuild_cache.dir

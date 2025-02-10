@@ -5,7 +5,7 @@ import 'package:system_info/theme/container_color.dart';
 import 'package:system_info/theme/container_radius.dart';
 import 'package:system_info/utils/dynamic_size.dart';
 import '../components/ram_chart_components/ram_legend.dart';
-import '../components/ram_chart_components/ram_provider.dart';
+import '../provider/ram_provider.dart';
 
 class RamPieChart extends StatelessWidget {
   const RamPieChart({super.key});
