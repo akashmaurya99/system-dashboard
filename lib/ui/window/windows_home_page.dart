@@ -3,7 +3,6 @@ import 'package:system_info/widgets/gpu_uses_chart.dart';
 import '../../widgets/active_programs_lists.dart';
 import '../../widgets/cpu_uses_chart.dart';
 import '../../widgets/ram_pie_chart.dart';
-import '../../widgets/storage_pie_chart.dart';
 import '../../widgets/system_info_container.dart';
 
 class WindowsHomePage extends StatelessWidget {
@@ -32,7 +31,7 @@ class WindowsHomePage extends StatelessWidget {
 
                       Row(
                         children: [
-                          StoragePieChart(),
+                          // StoragePieChart(),
                           SizedBox(
                             width: 20,
                           ),

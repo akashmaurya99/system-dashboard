@@ -13,8 +13,6 @@ class ProgramProvider extends ChangeNotifier {
       threadCount: 10,
       parentPid: 1,
       user: "John Doe",
-      diskRead: 300,
-      diskWrite: 150,
       state: "Running",
       windowTitle: "Terminal",
     )
@@ -28,6 +26,58 @@ class ProgramProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+// import 'dart:convert';
+// import 'package:flutter/foundation.dart';
+// import '../models/active_program_model.dart';
+// import '../services/macos_system_info.dart';
+
+// class ProgramProvider extends ChangeNotifier {
+//   final MacSystemInfo _systemInfo = MacSystemInfo();
+
+//   List<ProgramInfo> _programs = [];
+//   List<ProgramInfo> get programs => _programs;
+
+//   ProgramProvider() {
+//     fetchRunningProcesses();
+//   }
+
+//   /// Fetches running processes using FFI and updates the list
+//   Future<void> fetchRunningProcesses() async {
+//     try {
+//       String jsonString = _systemInfo.getRunningProcesses();
+//       debugPrint("Raw JSON from FFI: $jsonString");
+
+//       // Validate response
+//       if (jsonString.isEmpty) {
+//         debugPrint("Error: Received empty JSON string from FFI.");
+//         return;
+//       }
+
+//       // Decode JSON as a Map since it's wrapped in an object
+//       final Map<String, dynamic> jsonData = jsonDecode(jsonString);
+
+//       // Extract the list from 'runningProcesses'
+//       if (!jsonData.containsKey("runningProcesses") ||
+//           jsonData["runningProcesses"] is! List) {
+//         debugPrint(
+//             "Error: JSON format is incorrect. Expected 'runningProcesses' list.");
+//         return;
+//       }
+
+//       final List<dynamic> processList = jsonData["runningProcesses"];
+
+//       // Convert to ProgramInfo list
+//       List<ProgramInfo> newPrograms =
+//           processList.map((item) => ProgramInfo.fromJson(item)).toList();
+
+//       _programs = newPrograms;
+//       notifyListeners();
+//     } catch (e) {
+//       debugPrint("Error fetching running processes: $e");
+//     }
+//   }
+// }
 
 // import 'dart:async';
 // import 'dart:convert';

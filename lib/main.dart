@@ -3,10 +3,17 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:screen_retriever/screen_retriever.dart';
 import 'package:system_info/provider/cpu_provider.dart';
-import 'package:system_info/ui/mac/mac_os_home_page.dart';
+import 'package:system_info/ui/mac/mac_os_entry.dart';
 import 'package:system_info/ui/window/windows_home_page.dart';
 import 'dart:io';
 import 'package:window_manager/window_manager.dart';
+import 'provider/battery_info_provider.dart';
+import 'provider/cpu_info_provider.dart';
+import 'provider/disk_info_provider.dart';
+import 'provider/gpu_info_provider.dart';
+import 'provider/installed_apps_provider.dart';
+import 'provider/os_info_provider.dart';
+import 'provider/ram_info_provider.dart';
 import 'provider/ram_provider.dart';
 import 'provider/storage_provider.dart';
 import 'provider/active_program_provider.dart';
@@ -69,13 +76,20 @@ class AppEnteryPoint extends StatelessWidget {
               ChangeNotifierProvider(create: (_) => RamProvider()),
               ChangeNotifierProvider(create: (_) => ProgramProvider()),
               ChangeNotifierProvider(create: (_) => SystemInfoProvider()),
+              ChangeNotifierProvider(create: (_) => InstalledAppsProvider()),
+              ChangeNotifierProvider(create: (_) => RamInfoProvider()),
+              ChangeNotifierProvider(create: (_) => BatteryInfoProvider()),
+              ChangeNotifierProvider(create: (_) => CPUInfoProvider()),
+              ChangeNotifierProvider(create: (_) => DiskInfoProvider()),
+              ChangeNotifierProvider(create: (_) => OSInfoProvider()),
+              ChangeNotifierProvider(create: (_) => GpuInfoProvider()),
             ],
-            child: !Platform.isMacOS
+            child: Platform.isMacOS
                 ? MacosApp(
                     // title: 'My macOS App',
                     debugShowCheckedModeBanner: false,
                     theme: MacosThemeData.light(),
-                    home: MacOSHomePage(),
+                    home: MacOsEntry(),
                   )
                 : FluentApp(
                     debugShowCheckedModeBanner: false,

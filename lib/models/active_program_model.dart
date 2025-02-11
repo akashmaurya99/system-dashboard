@@ -8,8 +8,6 @@ class ProgramInfo {
   final int threadCount;
   final int parentPid;
   final String user;
-  final int diskRead;
-  final int diskWrite;
   final String state;
   final String windowTitle;
 
@@ -23,9 +21,23 @@ class ProgramInfo {
     required this.threadCount,
     required this.parentPid,
     required this.user,
-    required this.diskRead,
-    required this.diskWrite,
     required this.state,
     required this.windowTitle,
   });
+
+  factory ProgramInfo.fromJson(Map<String, dynamic> json) {
+    return ProgramInfo(
+      pid: json['pid'],
+      name: json['name'],
+      cpuUsage: json['cpuUsage'].toDouble(),
+      memoryUsage: json['memoryUsage'],
+      executablePath: json['executablePath'],
+      startTime: DateTime.parse(json['startTime']),
+      threadCount: json['threadCount'],
+      parentPid: json['parentPid'],
+      user: json['user'],
+      state: json['state'],
+      windowTitle: json['windowTitle'],
+    );
+  }
 }

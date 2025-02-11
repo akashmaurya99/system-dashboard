@@ -30,19 +30,19 @@ __attribute__((visibility("default"))) double cpuUsages() {
     return getCPUUsageExtern(); // Calls correct implementation
 }
 
-// ✅ Get Disk Usage
-__attribute__((visibility("default"))) char* diskUsages(const char* diskPath) {
-    return strdup_cstr(getDiskUsageInternal(diskPath)); // Calls correct implementation
-}
+// // ✅ Get Disk Usage
+// __attribute__((visibility("default"))) char* diskUsages(const char* diskPath) {
+//     return strdup_cstr(getDiskUsageInternal(diskPath)); // Calls correct implementation
+// }
 
-// ✅ Get Disk Speed
-__attribute__((visibility("default"))) char* diskSpeed() {
-    return strdup_cstr(getDiskSpeedInternal()); // Calls correct implementation
-}
+// // ✅ Get Disk Speed
+// __attribute__((visibility("default"))) char* diskSpeed() {
+//     return strdup_cstr(getDiskSpeedInternal()); // Calls correct implementation
+// }
 
 // ✅ Get Disk Details
 __attribute__((visibility("default"))) char* diskDetails() {
-    return strdup_cstr(getDiskDetailsInternal()); // Calls correct implementation
+    return strdup_cstr(getDiskInfo()); // Calls correct implementation
 }
 
 // ✅ Get GPU Info

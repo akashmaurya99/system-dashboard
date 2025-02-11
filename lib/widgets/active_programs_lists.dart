@@ -50,7 +50,7 @@ class ActiveProgramsList extends StatelessWidget {
                                 color: ContainerColor.primary,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: ContainerRadius
-                                        .secondry // Custom border radius
+                                        .primary // Custom border radius
                                     ),
                                 // elevation: 2,
 
@@ -79,11 +79,11 @@ class ActiveProgramsList extends StatelessWidget {
                                           ContainerColor.primary,
                                       shape: RoundedRectangleBorder(
                                           borderRadius: ContainerRadius
-                                              .secondry // Matching radius
+                                              .primary // Matching radius
                                           ),
                                       collapsedShape: RoundedRectangleBorder(
                                           borderRadius: ContainerRadius
-                                              .secondry // Matching collapsed radius
+                                              .primary // Matching collapsed radius
                                           ),
                                       subtitle: Text(
                                         "PID: ${program.pid} • CPU: ${program.cpuUsage.toStringAsFixed(2)}% • Memory: ${(program.memoryUsage / 1024).toStringAsFixed(1)} MB",
@@ -101,10 +101,6 @@ class ActiveProgramsList extends StatelessWidget {
                                         _infoTile("Thread Count",
                                             program.threadCount.toString()),
                                         _infoTile("User", program.user),
-                                        _infoTile("Disk Read",
-                                            "${program.diskRead} KB"),
-                                        _infoTile("Disk Write",
-                                            "${program.diskWrite} KB"),
                                         _infoTile("State", program.state),
                                         _infoTile("Window Title",
                                             program.windowTitle),
@@ -133,13 +129,18 @@ class ActiveProgramsList extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(horizontal: 16),
         title: Row(
           children: [
-            Text(
-              "$title: ",
-              style: const TextStyle(fontSize: 13),
+            Expanded(
+              child: Text(
+                "$title: ",
+                style: const TextStyle(fontSize: 13),
+                overflow: TextOverflow.clip,
+              ),
             ),
-            Text(
-              value,
-              style: const TextStyle(fontSize: 11),
+            Expanded(
+              child: Text(
+                value,
+                style: const TextStyle(fontSize: 11),
+              ),
             ),
           ],
         ),

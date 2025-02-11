@@ -15,7 +15,7 @@ class SystemInfoSection extends StatelessWidget {
       children: [
         InfoRow(
           iconPath: 'assets/icons/pc.svg',
-          title: "System Info",
+          title: "System Model",
           details: systemInfo["System Info"] ?? [],
         ),
         const SizedBox(height: 10),

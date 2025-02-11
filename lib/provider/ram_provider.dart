@@ -17,26 +17,28 @@ class RamProvider extends ChangeNotifier {
   void fetchRamInfo() {
     final ramInfo = MacSystemInfo().getRamInfo();
 
-    final parsedData = _parseRamInfo(ramInfo);
-    usedRam = parsedData[0];
-    freeRam = parsedData[1];
+    // final parsedData = _parseRamInfo(ramInfo);
+    final Map<String, dynamic> ramUsage = jsonDecode(ramInfo);
+
+    usedRam = ramUsage["usedMemory"] ?? 0.0;
+    freeRam = ramUsage["freeMemory"] ?? 0.0;
     notifyListeners();
   }
 
-  List<double> _parseRamInfo(String ramInfo) {
-    try {
-      final Map<String, dynamic> jsonData = json.decode(ramInfo);
-      final usedMB = jsonData['Used_RAM_MB'] ?? 0;
-      final freeMB = jsonData['Free_RAM_MB'] ?? 0;
+  // List<double> _parseRamInfo(String ramInfo) {
+  //   try {
+  //     final Map<String, dynamic> jsonData = json.decode(ramInfo);
+  //     final usedMB = jsonData['Used_RAM_MB'] ?? 0;
+  //     final freeMB = jsonData['Free_RAM_MB'] ?? 0;
 
-      final usedGB = usedMB / 1024; // Convert MB to GB
-      final freeGB = freeMB / 1024; // Convert MB to GB
+  //     final usedGB = usedMB / 1024; // Convert MB to GB
+  //     final freeGB = freeMB / 1024; // Convert MB to GB
 
-      return [usedGB, freeGB];
-    } catch (e) {
-      return [0, 0];
-    }
-  }
+  //     return [usedGB, freeGB];
+  //   } catch (e) {
+  //     return [0, 0];
+  //   }
+  // }
 
   void handleTouch(FlTouchEvent event, PieTouchResponse? pieTouchResponse) {
     if (!event.isInterestedForInteractions ||

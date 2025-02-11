@@ -7,14 +7,18 @@
 extern "C" {
 #endif
 
+
+
+__attribute__((visibility("default"))) char* getDiskInfo();
+
 // Get disk usage info in JSON format
-__attribute__((visibility("default"))) char* getDiskUsageInternal(const char* diskPath);
+// __attribute__((visibility("default"))) char* getDiskUsageInternal(const char* diskPath);
 
 // Get disk speed in JSON format
-__attribute__((visibility("default"))) char* getDiskSpeedInternal();
+// __attribute__((visibility("default"))) char* getDiskSpeedInternal();
 
-// Get detailed disk info in JSON format
-__attribute__((visibility("default"))) char* getDiskDetailsInternal();
+// // Get detailed disk info in JSON format
+// __attribute__((visibility("default"))) char* getDiskDetailsInternal();
 
 // Free dynamically allocated memory
 __attribute__((visibility("default"))) void free_cstr(char* ptr);

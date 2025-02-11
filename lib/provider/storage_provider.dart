@@ -28,23 +28,17 @@ class StorageProvider extends ChangeNotifier {
 
   Future<void> _fetchStorageData() async {
     try {
-      final String diskUsageStr = MacSystemInfo().getDiskUsage("/");
+      final String diskUsageStr = MacSystemInfo().getDiskDetails();
       final Map<String, dynamic> diskUsage = jsonDecode(diskUsageStr);
 
-      totalSpace = _parseGB(diskUsage["Total Disk Size"]);
-      usedSpace = _parseGB(diskUsage["Used Disk Space"]);
-      freeSpace = _parseGB(diskUsage["Free Disk Space"]);
+      totalSpace = diskUsage["totalSpace"] ?? 1;
+      usedSpace = diskUsage["usedSpace"] ?? 0;
+      freeSpace = diskUsage["freeSpace"] ?? 0;
 
       notifyListeners();
     } catch (e) {
       print("Error fetching storage data: $e");
     }
-  }
-
-  /// Converts "245.107 GB" -> 245.107 (double)
-  double _parseGB(String? sizeStr) {
-    if (sizeStr == null) return 0;
-    return double.tryParse(sizeStr.replaceAll(" GB", "")) ?? 0;
   }
 
   List<PieChartSectionData> showingSections(BuildContext context) {

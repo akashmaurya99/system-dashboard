@@ -60,23 +60,6 @@ class MacSystemInfo {
     return _getString(ptr);
   }
 
-  /// Disk Speed
-  String getDiskSpeed() {
-    final ptr =
-        _lib.lookupFunction<Pointer<Utf8> Function(), Pointer<Utf8> Function()>(
-            'diskSpeed')();
-    return _getString(ptr);
-  }
-
-  /// Disk Usage (Pass disk path as argument)
-  String getDiskUsage(String diskPath) {
-    final diskPathPtr = diskPath.toNativeUtf8();
-    final ptr = _lib.lookupFunction<Pointer<Utf8> Function(Pointer<Utf8>),
-        Pointer<Utf8> Function(Pointer<Utf8>)>('diskUsages')(diskPathPtr);
-    malloc.free(diskPathPtr);
-    return _getString(ptr);
-  }
-
   /// GPU Info
   String getGpuInfo() {
     final ptr =
