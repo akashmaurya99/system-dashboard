@@ -200,5 +200,5 @@ This project is licensed under the [MIT License](LICENSE).
 Stay tuned for updates and feel free to contribute!
 
 ## Download
-🚀 **Get the Latest Version:**  
+**Get the Latest Version:**  
 [Download for macOS](https://github.com/akashmaurya99/system-dashboard/releases/latest)
