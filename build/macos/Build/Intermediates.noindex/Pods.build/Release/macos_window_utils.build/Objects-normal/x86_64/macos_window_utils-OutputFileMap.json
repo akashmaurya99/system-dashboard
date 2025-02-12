@@ -1,0 +1,85 @@
+{
+  "" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/macos_window_utils-master.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/macos_window_utils-master.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/macos_window_utils-master.dia",
+    "emit-module-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/macos_window_utils-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/macos_window_utils-master-emit-module.dia",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/macos_window_utils-master.swiftdeps"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/BlockingToolbar.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/BlockingToolbar.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/BlockingToolbar.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/BlockingToolbar.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/ButtonTypeNameToButtonTypeConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/ButtonTypeNameToButtonTypeConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/ButtonTypeNameToButtonTypeConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/ButtonTypeNameToButtonTypeConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/FlutterWindowDelegate.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/FlutterWindowDelegate.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/FlutterWindowDelegate.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/FlutterWindowDelegate.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/LevelNameToLevelConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/LevelNameToLevelConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/LevelNameToLevelConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/LevelNameToLevelConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MacOSWindowUtilsPlugin.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MacOSWindowUtilsPlugin.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MacOSWindowUtilsPlugin.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MacOSWindowUtilsPlugin.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MacOSWindowUtilsViewController.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MacOSWindowUtilsViewController.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MacOSWindowUtilsViewController.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MacOSWindowUtilsViewController.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MainFlutterWindowManipulator.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MainFlutterWindowManipulator.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MainFlutterWindowManipulator.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MainFlutterWindowManipulator.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MaterialIDToMaterialConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MaterialIDToMaterialConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MaterialIDToMaterialConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/MaterialIDToMaterialConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/PresentationOptionNameToPresentationOptionsConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/PresentationOptionNameToPresentationOptionsConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/PresentationOptionNameToPresentationOptionsConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/PresentationOptionNameToPresentationOptionsConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/StyleMaskNameToStyleMaskConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/StyleMaskNameToStyleMaskConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/StyleMaskNameToStyleMaskConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/StyleMaskNameToStyleMaskConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/ToolbarStyleNameToEnumConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/ToolbarStyleNameToEnumConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/ToolbarStyleNameToEnumConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/ToolbarStyleNameToEnumConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubview.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubview.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubview.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubview.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubviewProperties.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubviewProperties.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubviewProperties.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubviewProperties.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubviewRegistry.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubviewRegistry.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubviewRegistry.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/VisualEffectSubviewRegistry.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/colorFromRGBAString.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/colorFromRGBAString.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/colorFromRGBAString.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_window_utils.build/Objects-normal/x86_64/colorFromRGBAString.o"
+  }
+}

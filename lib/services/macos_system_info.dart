@@ -6,16 +6,18 @@ import 'package:ffi/ffi.dart';
 final DynamicLibrary _lib = () {
   if (Platform.isMacOS) {
     // Get the absolute path of the library inside the Flutter macOS bundle
+    // this will be used for run the app in debug mode
+    // uncomment the return line to run the app in debug mode
+
     // return DynamicLibrary.open("libmac_system_info.dylib");
-    // Platform.resolvedExecutable gives the full path to the executable.
+
     // Its parent directory is the folder containing your executable (i.e. Contents/MacOS).
+    // this path is used for run the app in release mode
+    // comment the below code to run the app in debug mode
 
     final String exePath = Platform.resolvedExecutable;
     final String directory = File(exePath).parent.path;
     final String libPath = '$directory/libmac_system_info.dylib';
-
-    // Optionally, print the path to debug:
-    // print('Loading library from: $libPath');
 
     return DynamicLibrary.open(libPath);
   } else {

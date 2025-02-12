@@ -1,0 +1,158 @@
+{
+  "" : {
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/macos_window_utils-master.dia",
+    "emit-module-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/macos_window_utils-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/macos_window_utils-master-emit-module.dia",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/macos_window_utils-master.swiftdeps"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/BlockingToolbar.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/BlockingToolbar~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/ButtonTypeNameToButtonTypeConverter.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ButtonTypeNameToButtonTypeConverter~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/FlutterWindowDelegate.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/FlutterWindowDelegate~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/LevelNameToLevelConverter.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/LevelNameToLevelConverter~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MacOSWindowUtilsPlugin.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsPlugin~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MacOSWindowUtilsViewController.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MacOSWindowUtilsViewController~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MainFlutterWindowManipulator.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MainFlutterWindowManipulator~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MaterialIDToMaterialConverter.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/MaterialIDToMaterialConverter~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/PresentationOptionNameToPresentationOptionsConverter.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/PresentationOptionNameToPresentationOptionsConverter~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/StyleMaskNameToStyleMaskConverter.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/StyleMaskNameToStyleMaskConverter~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/ToolbarStyleNameToEnumConverter.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/ToolbarStyleNameToEnumConverter~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubview.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubview~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubviewProperties.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewProperties~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubviewRegistry.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/VisualEffectSubviewRegistry~partial.swiftmodule"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/colorFromRGBAString.swift" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.dia",
+    "index-unit-output-path" : "/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.o",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString.swiftdeps",
+    "swiftmodule" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Debug/macos_window_utils.build/Objects-normal/arm64/colorFromRGBAString~partial.swiftmodule"
+  }
+}

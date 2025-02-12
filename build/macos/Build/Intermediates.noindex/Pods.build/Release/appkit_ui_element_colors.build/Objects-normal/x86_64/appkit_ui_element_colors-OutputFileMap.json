@@ -1,0 +1,50 @@
+{
+  "" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/appkit_ui_element_colors-master.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/appkit_ui_element_colors-master.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/appkit_ui_element_colors-master.dia",
+    "emit-module-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/appkit_ui_element_colors-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/appkit_ui_element_colors-master-emit-module.dia",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/appkit_ui_element_colors-master.swiftdeps"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/AppkitUiElementColorsPlugin.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/AppkitUiElementColorsPlugin.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/AppkitUiElementColorsPlugin.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/AppkitUiElementColorsPlugin.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/NSAppearanceNameToAppearanceConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSAppearanceNameToAppearanceConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSAppearanceNameToAppearanceConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSAppearanceNameToAppearanceConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/NSColorComponent.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorComponent.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorComponent.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorComponent.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/NSColorNameToColorConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorNameToColorConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorNameToColorConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorNameToColorConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/NSColorSpaceNameToColorSpaceConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorSpaceNameToColorSpaceConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorSpaceNameToColorSpaceConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorSpaceNameToColorSpaceConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/NSColorToDictionaryConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorToDictionaryConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorToDictionaryConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorToDictionaryConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/NSColorToHashConverter.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorToHashConverter.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorToHashConverter.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/NSColorToHashConverter.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/appkit_ui_element_colors-1.0.0/macos/Classes/SystemColorObserver.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/SystemColorObserver.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/SystemColorObserver.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/appkit_ui_element_colors.build/Objects-normal/x86_64/SystemColorObserver.o"
+  }
+}

@@ -1,0 +1,53 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/akashmaurya/Documents/system_info/build/macos/Build/Products/Release/macos_ui/macos_ui.framework/Versions/A/macos_ui'
+relocations:
+  - { offset: 0xCE4F3, size: 0x8, addend: 0x0, symName: _macos_uiVersionString, symObjAddr: 0x0, symBinAddr: 0x5E10, symSize: 0x0 }
+  - { offset: 0xCE528, size: 0x8, addend: 0x0, symName: _macos_uiVersionNumber, symObjAddr: 0x28, symBinAddr: 0x5E38, symSize: 0x0 }
+  - { offset: 0xCE569, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC8onListen13withArguments9eventSinkSo12FlutterErrorCSgypSg_yAJctFTo', symObjAddr: 0x0, symBinAddr: 0x18D0, symSize: 0xC0 }
+  - { offset: 0xCE7BE, size: 0x8, addend: 0x0, symName: '_$sSo7NSColorC8macos_uiE18asFlutterHexStringSSvg', symObjAddr: 0x1E0, symBinAddr: 0x1AB0, symSize: 0x2B0 }
+  - { offset: 0xCE95A, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderCfETo', symObjAddr: 0x7D0, symBinAddr: 0x20A0, symSize: 0x40 }
+  - { offset: 0xCE989, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC9eventSink33_CDCA3CE599D4E4AB5C91E511D5B8D2BELLyypSgcSgvpfi', symObjAddr: 0x810, symBinAddr: 0x20E0, symSize: 0x10 }
+  - { offset: 0xCE9A1, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderCMa', symObjAddr: 0x820, symBinAddr: 0x20F0, symSize: 0x20 }
+  - { offset: 0xCE9B5, size: 0x8, addend: 0x0, symName: '_$sypSgIegn_SgWOe', symObjAddr: 0x840, symBinAddr: 0x2110, symSize: 0x20 }
+  - { offset: 0xCE9C9, size: 0x8, addend: 0x0, symName: '_$sypSgWOh', symObjAddr: 0x860, symBinAddr: 0x2130, symSize: 0x30 }
+  - { offset: 0xCE9DD, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledName, symObjAddr: 0x890, symBinAddr: 0x2160, symSize: 0x40 }
+  - { offset: 0xCE9F1, size: 0x8, addend: 0x0, symName: '_$sSo8NSStringCMa', symObjAddr: 0x8D0, symBinAddr: 0x21A0, symSize: 0x30 }
+  - { offset: 0xCEA05, size: 0x8, addend: 0x0, symName: '_$syXlSgIeyBy_ypSgIegn_TRTA', symObjAddr: 0x920, symBinAddr: 0x21F0, symSize: 0x10 }
+  - { offset: 0xCEA19, size: 0x8, addend: 0x0, symName: '_$sS2SSysWl', symObjAddr: 0x930, symBinAddr: 0x2200, symSize: 0x30 }
+  - { offset: 0xCEB64, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC8onListen13withArguments9eventSinkSo12FlutterErrorCSgypSg_yAJctFTo', symObjAddr: 0x0, symBinAddr: 0x18D0, symSize: 0xC0 }
+  - { offset: 0xCEBE1, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC04openD010pickerModeySS_tF', symObjAddr: 0xC0, symBinAddr: 0x1990, symSize: 0x120 }
+  - { offset: 0xCEDA8, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC07currentC033_3E4313AFB03DB2E6D30E5A27CBE7ECA7LLSSyFTo', symObjAddr: 0x490, symBinAddr: 0x1D60, symSize: 0x90 }
+  - { offset: 0xCEE23, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC11startStream05colorD0ySo07NSColorD0C_tF', symObjAddr: 0x520, symBinAddr: 0x1DF0, symSize: 0x110 }
+  - { offset: 0xCEE86, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC11startStream05colorD0ySo07NSColorD0C_tFTo', symObjAddr: 0x630, symBinAddr: 0x1F00, symSize: 0x50 }
+  - { offset: 0xCEEBA, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC8onCancel13withArgumentsSo12FlutterErrorCSgypSg_tFTo', symObjAddr: 0x680, symBinAddr: 0x1F50, symSize: 0x90 }
+  - { offset: 0xCEF33, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderCACycfcTo', symObjAddr: 0x710, symBinAddr: 0x1FE0, symSize: 0x90 }
+  - { offset: 0xCEF60, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderCfD', symObjAddr: 0x7A0, symBinAddr: 0x2070, symSize: 0x30 }
+  - { offset: 0xCEF83, size: 0x8, addend: 0x0, symName: '_$s8macos_ui18ColorPanelProviderC13setPickerMode05panelH0ySS_tFTf4nd_n', symObjAddr: 0x960, symBinAddr: 0x2230, symSize: 0x211 }
+  - { offset: 0xCF12E, size: 0x8, addend: 0x0, symName: '_$syXlSgIeyBy_ypSgIegn_TR', symObjAddr: 0x0, symBinAddr: 0x2450, symSize: 0xB0 }
+  - { offset: 0xCF146, size: 0x8, addend: 0x0, symName: '_$syXlSgIeyBy_ypSgIegn_TR', symObjAddr: 0x0, symBinAddr: 0x2450, symSize: 0xB0 }
+  - { offset: 0xCF36E, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginCfETo', symObjAddr: 0x630, symBinAddr: 0x2A80, symSize: 0x40 }
+  - { offset: 0xCF3A8, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4findys10_HashTableV6BucketV6bucket_Sb5foundtxSHRzlFSS_Tg5', symObjAddr: 0x670, symBinAddr: 0x2AC0, symSize: 0x60 }
+  - { offset: 0xCF3E0, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4find_9hashValues10_HashTableV6BucketV6bucket_Sb5foundtx_SitSHRzlFSS_Tg5', symObjAddr: 0x6D0, symBinAddr: 0x2B20, symSize: 0xE0 }
+  - { offset: 0xCF46B, size: 0x8, addend: 0x0, symName: '_$sSo8NSObjectCMa', symObjAddr: 0x990, symBinAddr: 0x2DE0, symSize: 0x30 }
+  - { offset: 0xCF47F, size: 0x8, addend: 0x0, symName: '_$sypSgWOb', symObjAddr: 0xA30, symBinAddr: 0x2E10, symSize: 0x40 }
+  - { offset: 0xCF493, size: 0x8, addend: 0x0, symName: '_$sypWOc', symObjAddr: 0xA70, symBinAddr: 0x2E50, symSize: 0x30 }
+  - { offset: 0xCF4A7, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginCMa', symObjAddr: 0xAC0, symBinAddr: 0x2E80, symSize: 0x20 }
+  - { offset: 0xCF4BB, size: 0x8, addend: 0x0, symName: '_$sypSgWOc', symObjAddr: 0xB10, symBinAddr: 0x2EC0, symSize: 0x40 }
+  - { offset: 0xCF4CF, size: 0x8, addend: 0x0, symName: ___swift_project_boxed_opaque_existential_0, symObjAddr: 0xB50, symBinAddr: 0x2F00, symSize: 0x30 }
+  - { offset: 0xCF4E3, size: 0x8, addend: 0x0, symName: ___swift_destroy_boxed_opaque_existential_0, symObjAddr: 0xB80, symBinAddr: 0x2F30, symSize: 0x30 }
+  - { offset: 0xCF5B9, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8register4withySo07FlutterE9Registrar_p_tFZ', symObjAddr: 0xB0, symBinAddr: 0x2500, symSize: 0x10 }
+  - { offset: 0xCF5DA, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8register4withySo07FlutterE9Registrar_p_tFZTo', symObjAddr: 0xC0, symBinAddr: 0x2510, symSize: 0x30 }
+  - { offset: 0xCF686, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF', symObjAddr: 0xF0, symBinAddr: 0x2540, symSize: 0x250 }
+  - { offset: 0xCF70C, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctFTo', symObjAddr: 0x340, symBinAddr: 0x2790, symSize: 0x80 }
+  - { offset: 0xCF760, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8onListen13withArguments9eventSinkSo12FlutterErrorCSgypSg_yAJctF', symObjAddr: 0x3C0, symBinAddr: 0x2810, symSize: 0x40 }
+  - { offset: 0xCF7F1, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8onListen13withArguments9eventSinkSo12FlutterErrorCSgypSg_yAJctFTo', symObjAddr: 0x400, symBinAddr: 0x2850, symSize: 0xC0 }
+  - { offset: 0xCF860, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8onCancel13withArgumentsSo12FlutterErrorCSgypSg_tF', symObjAddr: 0x4C0, symBinAddr: 0x2910, symSize: 0x30 }
+  - { offset: 0xCF8CB, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8onCancel13withArgumentsSo12FlutterErrorCSgypSg_tFTo', symObjAddr: 0x4F0, symBinAddr: 0x2940, symSize: 0x90 }
+  - { offset: 0xCF930, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginCACycfC', symObjAddr: 0x580, symBinAddr: 0x29D0, symSize: 0x20 }
+  - { offset: 0xCF944, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginCACycfc', symObjAddr: 0x5A0, symBinAddr: 0x29F0, symSize: 0x30 }
+  - { offset: 0xCF99D, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginCACycfcTo', symObjAddr: 0x5D0, symBinAddr: 0x2A20, symSize: 0x30 }
+  - { offset: 0xCF9FC, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginCfD', symObjAddr: 0x600, symBinAddr: 0x2A50, symSize: 0x30 }
+  - { offset: 0xCFA72, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC8register4withySo07FlutterE9Registrar_p_tFZTf4nd_n', symObjAddr: 0x7B0, symBinAddr: 0x2C00, symSize: 0x1E0 }
+  - { offset: 0xCFB62, size: 0x8, addend: 0x0, symName: '_$s8macos_ui13MacOSUiPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF015$syXlSgIeyBy_ypM7Iegn_TRyXlSgIeyBy_Tf1ncn_nTf4nng_n', symObjAddr: 0xBB0, symBinAddr: 0x2F60, symSize: 0x2DB }
+...

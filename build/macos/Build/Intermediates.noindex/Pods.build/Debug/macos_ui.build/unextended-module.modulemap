@@ -1,0 +1,10 @@
+framework module macos_ui {
+  umbrella header "macos_ui-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module macos_ui.__Swift {
+  exclude header "macos_ui-Swift.h"
+}

@@ -97,19 +97,108 @@ system-dashboard/
 ```
 
 ## Setup & Build Instructions
+
 ### macOS
-1. Install dependencies (Xcode, CMake, etc.)
-2. Navigate to `ffi/mac/` and compile the C++ code
-3. Run the Flutter app
+#### Prerequisites
+- Install **Xcode** (for C++ compilation)
+- Install **CMake** (for building shared libraries)
+- Install **Flutter** (for UI development)
+
+#### Steps
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/akashmaurya99/system-dashboard.git
+   cd system-dashboard
+   ```
+
+2. **Navigate to the macOS FFI Directory & Compile C++ Code**:
+   ```sh
+   cd ffi/mac/
+   ```
+   This folder contains multiple C++ source files responsible for gathering system data.
+
+3. **Navigate to `macos/` and Build the Shared Library**:
+   ```sh
+   mkdir -p build && cd build
+   cmake ..
+   make -j$(sysctl -n hw.ncpu)
+   ```
+   This will generate `libmac_system_info.dylib`.
+
+4. **Verify the Exposed C++ Functions**:
+   ```sh
+   nm -gU libmac_system_info.dylib
+   ```
+   This command lists all functions accessible via Flutter FFI.
+
+5. **Ensure `libmac_system_info.dylib` is Copied to `build/macos/Build/Products/Debug/system_info.app/Contents/MacOS` to run app in Debug Mode**
+   If the `.dylib` file is not found in the expected directory, manually move it:
+   ```sh
+   build/macos/Build/Products/Debug/system_info.app/Contents/MacOS
+   ```
+6. **Ensure `libmac_system_info.dylib` is Copied to `build/macos/Build/Products/Release/system_info.app/Contents/MacOS` to run app in Release Mode**
+   If the `.dylib` file is not found in the expected directory, manually move it:
+   ```sh
+   build/macos/Build/Products/Release/system_info.app/Contents/MacOS
+   ```
+7. **Run the Flutter App**:
+   ```sh
+   cd ../../
+   flutter run -d macos
+   ```
+
+---
 
 ### Windows
-1. Install dependencies (Visual Studio, CMake, etc.)
-2. Navigate to `ffi/windows/` and compile the C++ code
-3. Run the Flutter app
 
-## Contributions
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+#### Steps
+1. **Clone the Repository**:
+   ```sh
+   git clone https://github.com/akashmaurya99/system-dashboard.git
+   cd system-dashboard
+   ```
+
+2. **Navigate to the Windows FFI Directory & Compile C++ Code**:
+   ```sh
+   cd ffi/windows/
+   ```
+   This folder contains C++ files for gathering system data.
+
+3. **Navigate to `windows/` and Build the Shared Library**:**:
+   ```sh
+   mkdir -p build && cd build
+   cmake ..
+   cmake --build . --config Release
+   ```
+   This generates the necessary DLL file.
+
+4. **Run the Flutter App**:
+   ```sh
+   flutter run -d windows
+   ```
+
+---
+
+## Contribution Guidelines
+We welcome contributions! If you'd like to contribute:
+- Report bugs or request features via [GitHub Issues](https://github.com/akashmaurya99/system-dashboard/issues)
+- Submit a Pull Request with well-documented changes
+- Ensure your code follows best practices and is tested before submission
+
+---
 
 ## License
-[MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
 
+---
+
+## Future Enhancements
+- Add more detailed process monitoring
+- Implement a notification system for system health alerts
+- Introduce plugin support for additional system insights
+
+Stay tuned for updates and feel free to contribute!
+
+## Download
+🚀 **Get the Latest Version:**  
+[Download for macOS](https://github.com/akashmaurya99/system-dashboard/releases/latest)

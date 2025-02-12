@@ -1,0 +1,140 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_$s24appkit_ui_element_colors19SystemColorObserverC21systemColorsDidChange33_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLyyF",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCMn",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCMm",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCfD",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCACycfC",
+            "_$s24appkit_ui_element_colors16NSColorComponentOSHAAMc",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC021systemColorsDidChangeG033_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo8NSObject_pSgvpfi",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCACycfCTq",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC021systemColorsDidChangeG033_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo8NSObject_pSgvg",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC021systemColorsDidChangeG033_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo8NSObject_pSgvs",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCACycfc",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCMm",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCACycfC",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCfD",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCACycfC",
+            "_$s24appkit_ui_element_colors16NSColorComponentO10fromStringyACSgSSFZ",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCMa",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCACycfc",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginCACycfC",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCN",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCMa",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCMa",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC06removeG0yyF",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginCACycfc",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCMa",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCMn",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCN",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCfD",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCACycfCTq",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC6sharedACSgvsZ",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginCMn",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCMm",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCfD",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCN",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCN",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCACycfc",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCfD",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCfD",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCfd",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCMn",
+            "_appkit_ui_element_colorsVersionNumber",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginC8register4withySo07FlutterI9Registrar_p_tFZ",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC021systemColorsDidChangeG033_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo8NSObject_pSgvM",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCfd",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC6sharedACSgvMZ",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCfd",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC22registerSharedInstanceyyACFZ",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCfd",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCACycfC",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCfd",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterC7convertySo0eF0CSgSSFZ",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCACycfc",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC6sharedACSgvau",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCACycfC",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCMa",
+            "_appkit_ui_element_colorsVersionString",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCN",
+            "_$s24appkit_ui_element_colors16NSColorComponentO4hash4intoys6HasherVz_tF",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterC7convert5color10componentsSDySS12CoreGraphics7CGFloatVGSo0E0C_SayAA0E9ComponentOGtFZ",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCACycfC",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginCN",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginCfD",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCMn",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterC7convertySo0E0CSgSSFZ",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC13methodChannel33_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo013FlutterMethodI0CSgvg",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCMn",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCACycfc",
+            "_$s24appkit_ui_element_colors19SystemColorObserverCACycfCTq",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCACycfCTq",
+            "_$s24appkit_ui_element_colors16NSColorComponentO6toNameSSyF",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCACycfc",
+            "_$s24appkit_ui_element_colors16NSColorComponentO9hashValueSivg",
+            "_$s24appkit_ui_element_colors16NSColorComponentOMn",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCN",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginCMa",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterC7convertySo0E0CSSFZ",
+            "_$s24appkit_ui_element_colors16NSColorComponentOMa",
+            "_$s24appkit_ui_element_colors16NSColorComponentO9hashValueSivpMV",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC6create13methodChannelACSo013FlutterMethodJ0C_tFZ",
+            "_$s24appkit_ui_element_colors16NSColorComponentOSQAAMc",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC13methodChannel33_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo013FlutterMethodI0CSgvpfi",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC6sharedACSgvpZ",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCMn",
+            "_$s24appkit_ui_element_colors27AppkitUiElementColorsPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctFTq",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC6sharedACSgvgZ",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC13methodChannel33_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo013FlutterMethodI0CSgvs",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterC7convertySiSo0E0CFZ",
+            "_$s24appkit_ui_element_colors27NSColorNameToColorConverterCACycfCTq",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCMa",
+            "_$s24appkit_ui_element_colors16NSColorComponentO15toValueForColory12CoreGraphics7CGFloatVSo0E0CF",
+            "_$s24appkit_ui_element_colors16NSColorComponentON",
+            "_$s24appkit_ui_element_colors22NSColorToHashConverterCMm",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC06removeG0yyFTq",
+            "_$s24appkit_ui_element_colors19SystemColorObserverC13methodChannel33_C452EFE0FA8CD320B1CE2FC2D37C1FF6LLSo013FlutterMethodI0CSgvM",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCfd",
+            "_$s24appkit_ui_element_colors37NSAppearanceNameToAppearanceConverterCMm",
+            "_$s24appkit_ui_element_colors023NSColorSpaceNameToColorF9ConverterCACycfCTq",
+            "_$s24appkit_ui_element_colors28NSColorToDictionaryConverterCMm",
+            "_$s24appkit_ui_element_colors16NSColorComponentO21__derived_enum_equalsySbAC_ACtFZ"
+          ],
+          "objc_class": [
+            "PodsDummy_appkit_ui_element_colors",
+            "_TtC24appkit_ui_element_colors27AppkitUiElementColorsPlugin"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/appkit_ui_element_colors.framework/Versions/A/appkit_ui_element_colors"
+      }
+    ],
+    "swift_abi": [
+      {
+        "abi": 7
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "11",
+        "target": "arm64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}

@@ -1,0 +1,20 @@
+{
+  "" : {
+    "const-values" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/macos_ui-master.swiftconstvalues",
+    "dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/macos_ui-master.d",
+    "diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/macos_ui-master.dia",
+    "emit-module-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/macos_ui-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/macos_ui-master-emit-module.dia",
+    "swift-dependencies" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/macos_ui-master.swiftdeps"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_ui-2.1.9/macos/Classes/ColorPanelProvider.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/ColorPanelProvider.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/ColorPanelProvider.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/ColorPanelProvider.o"
+  },
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_ui-2.1.9/macos/Classes/MacosUiPlugin.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/MacosUiPlugin.o",
+    "llvm-bc" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/MacosUiPlugin.bc",
+    "object" : "/Users/akashmaurya/Documents/system_info/build/macos/Build/Intermediates.noindex/Pods.build/Release/macos_ui.build/Objects-normal/x86_64/MacosUiPlugin.o"
+  }
+}

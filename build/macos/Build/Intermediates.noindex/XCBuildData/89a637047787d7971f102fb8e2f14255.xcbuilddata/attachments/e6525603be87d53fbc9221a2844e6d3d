@@ -1,0 +1,10 @@
+framework module macos_window_utils {
+  umbrella header "macos_window_utils-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module macos_window_utils.__Swift {
+  exclude header "macos_window_utils-Swift.h"
+}

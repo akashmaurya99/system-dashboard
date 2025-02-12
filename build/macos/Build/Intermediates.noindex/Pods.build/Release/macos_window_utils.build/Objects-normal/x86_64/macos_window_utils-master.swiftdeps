@@ -1,0 +1,21 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "80292e465650ffcfb1036f212bfa6ceaba7305d065683f3906aaa859c67f6b42"
+build_start_time: [1739389698, 11909000]
+build_end_time: [1739389715, 349079000]
+inputs:
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/BlockingToolbar.swift": [1738659696, 878733469]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/ButtonTypeNameToButtonTypeConverter.swift": [1738659696, 877223434]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/FlutterWindowDelegate.swift": [1738659696, 876988317]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/LevelNameToLevelConverter.swift": [1738659696, 877450593]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MacOSWindowUtilsPlugin.swift": [1738659696, 876314213]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MacOSWindowUtilsViewController.swift": [1738659696, 875793438]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MainFlutterWindowManipulator.swift": [1738659696, 878543475]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/MaterialIDToMaterialConverter.swift": [1738659696, 878334149]
+  ? "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/PresentationOptionNameToPresentationOptionsConverter.swift"
+  : [1738659696, 879128165]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/StyleMaskNameToStyleMaskConverter.swift": [1738659696, 878150446]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/ToolbarStyleNameToEnumConverter.swift": [1738659696, 877815540]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubview.swift": [1738659696, 877631505]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubviewProperties.swift": [1738659696, 876548956]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/VisualEffectSubviewRegistry.swift": [1738659696, 878963920]
+  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_window_utils-1.6.1/macos/Classes/colorFromRGBAString.swift": [1738659696, 876733950]
