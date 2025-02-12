@@ -1,7 +1,0 @@
-version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
-options: "e6db58cf59b2b554ac13d1bd36b5857da05a0f1fd30310f746ab972726dd3a12"
-build_start_time: [1739389698, 18735000]
-build_end_time: [1739389712, 199416000]
-inputs:
-  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_ui-2.1.9/macos/Classes/ColorPanelProvider.swift": [1738659697, 548191342]
-  "/Users/akashmaurya/.pub-cache/hosted/pub.dev/macos_ui-2.1.9/macos/Classes/MacosUiPlugin.swift": [1738659697, 547924684]
