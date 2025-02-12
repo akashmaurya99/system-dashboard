@@ -53,28 +53,3 @@ class RamInfoProvider extends ChangeNotifier {
     updateRamInfo(newRamInfo);
   }
 }
-
-// import 'package:flutter/material.dart';
-// import '../models/ram_info_model.dart';
-
-// class RamInfoProvider extends ChangeNotifier {
-//   RamInfo _ramInfo = RamInfo(
-//     totalMemory: 0.0,
-//     usedMemory: 0.0,
-//     freeMemory: 0.0,
-//     swapTotal: 0.0,
-//     swapUsed: 0.0,
-//     memoryUsagePercentage: 0.0,
-//     memorySpeed: 0,
-//     memoryType: "Unknown",
-//     moduleCount: 0,
-//     casLatency: 0,
-//   );
-
-//   RamInfo get ramInfo => _ramInfo;
-
-//   void updateRamInfo(RamInfo newRamInfo) {
-//     _ramInfo = newRamInfo;
-//     notifyListeners();
-//   }
-// }

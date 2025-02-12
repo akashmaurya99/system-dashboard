@@ -48,29 +48,3 @@ class DiskInfoProvider extends ChangeNotifier {
     }
   }
 }
-
-// import 'package:flutter/material.dart';
-// import '../models/disk_info_model.dart';
-
-// class DiskInfoProvider extends ChangeNotifier {
-//   DiskInfo _diskInfo = DiskInfo(
-//     diskName: "Unknown",
-//     fileSystemType: "Unknown",
-//     totalSpace: 0.0,
-//     usedSpace: 0.0,
-//     freeSpace: 0.0,
-//     readSpeed: 0.0,
-//     writeSpeed: 0.0,
-//     isSSD: false,
-//     partitionCount: 0,
-//     diskTemperature: 0,
-//   );
-
-//   DiskInfo get diskInfo => _diskInfo;
-
-//   /// Call this method to update the disk information (e.g., from FFI).
-//   void updateDiskInfo(DiskInfo newDiskInfo) {
-//     _diskInfo = newDiskInfo;
-//     notifyListeners();
-//   }
-// }

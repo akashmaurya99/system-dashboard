@@ -238,10 +238,3 @@ extern "C" __attribute__((visibility("default"))) char* getRAMInfoJSON() {
     }
     return cstr;
 }
-
-// // Free allocated memory
-// extern "C" __attribute__((visibility("default"))) void free_cstr(char* ptr) {
-//     if (ptr) {
-//         free(ptr);
-//     }
-// }

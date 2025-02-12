@@ -65,29 +65,3 @@ class GpuInfoProvider extends ChangeNotifier {
     updateGpuInfo(newGpuInfo);
   }
 }
-
-// import 'package:flutter/material.dart';
-// import '../models/gpu_info_model.dart';
-
-// class GpuInfoProvider extends ChangeNotifier {
-//   GpuInfo _gpuInfo = GpuInfo(
-//     gpuName: "Unknown",
-//     vendor: "Unknown",
-//     memorySize: 0.0,
-//     coreClockSpeed: 0.0,
-//     memoryClockSpeed: 0.0,
-//     temperature: 0.0,
-//     usagePercentage: 0.0,
-//     vramUsage: 0.0,
-//     driverVersion: "Unknown",
-//     isIntegrated: false,
-//   );
-
-//   GpuInfo get gpuInfo => _gpuInfo;
-
-//   /// Update the GPU info with new data (e.g., from an FFI call)
-//   void updateGpuInfo(GpuInfo newGpuInfo) {
-//     _gpuInfo = newGpuInfo;
-//     notifyListeners();
-//   }
-// }

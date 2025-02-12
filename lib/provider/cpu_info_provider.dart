@@ -73,33 +73,3 @@ class CPUInfoProvider extends ChangeNotifier {
     updateCpuInfo(newCpuInfo);
   }
 }
-
-// import 'package:flutter/material.dart';
-// import '../models/cpu_info_model.dart';
-
-// class CPUInfoProvider extends ChangeNotifier {
-//   // Initialize with default values.
-//   CpuInfo _cpuInfo = CpuInfo(
-//     processorName: "Unknown",
-//     coreCount: 0,
-//     threadCount: 0,
-//     baseClockSpeed: 0.0,
-//     currentClockSpeed: 0.0,
-//     temperature: 0.0,
-//     usagePercentage: 0.0,
-//     architecture: "Unknown",
-//     l1CacheSize: 0,
-//     l2CacheSize: 0,
-//     l3CacheSize: 0,
-//     vendor: "Unknown",
-//     instructionSet: "Unknown",
-//   );
-
-//   CpuInfo get cpuInfo => _cpuInfo;
-
-//   /// Call this method whenever you have new CPU data (e.g., from FFI).
-//   void updateCpuInfo(CpuInfo newCpuInfo) {
-//     _cpuInfo = newCpuInfo;
-//     notifyListeners();
-//   }
-// }
