@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:system_info/theme/app_color.dart';
 import 'package:system_info/theme/container_color.dart';
 import 'package:system_info/theme/container_radius.dart';
 import '../provider/active_program_provider.dart';
 
-class ActiveProgramsList extends StatelessWidget {
+class ActiveProgramsList extends StatefulWidget {
   const ActiveProgramsList({super.key});
 
   @override
+  State<ActiveProgramsList> createState() => _ActiveProgramsListState();
+}
+
+class _ActiveProgramsListState extends State<ActiveProgramsList> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Consumer<ProgramProvider>(
+    return Consumer<RunningProgramProvider>(
       builder: (context, provider, child) {
         return LayoutBuilder(
           builder: (context, constraints) {
@@ -28,7 +39,7 @@ class ActiveProgramsList extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: AppColors.mainTextColor2,
                         ),
                       ),
                     ],
@@ -39,7 +50,7 @@ class ActiveProgramsList extends StatelessWidget {
                         ? const Center(
                             child: Text(
                               "No active programs found",
-                              style: TextStyle(color: Colors.white70),
+                              style: TextStyle(color: AppColors.mainTextColor2),
                             ),
                           )
                         : ListView.builder(
@@ -47,7 +58,7 @@ class ActiveProgramsList extends StatelessWidget {
                             itemBuilder: (context, index) {
                               final program = provider.programs[index];
                               return Card(
-                                color: ContainerColor.primary,
+                                color: Colors.transparent,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: ContainerRadius
                                         .primary // Custom border radius
@@ -72,7 +83,9 @@ class ActiveProgramsList extends StatelessWidget {
                                       ),
                                       title: Text(
                                         program.name,
-                                        style: const TextStyle(fontSize: 14),
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: AppColors.mainTextColor2),
                                       ),
                                       backgroundColor: ContainerColor.primary,
                                       collapsedBackgroundColor:
@@ -88,22 +101,19 @@ class ActiveProgramsList extends StatelessWidget {
                                       subtitle: Text(
                                         "PID: ${program.pid} • CPU: ${program.cpuUsage.toStringAsFixed(2)}% • Memory: ${(program.memoryUsage / 1024).toStringAsFixed(1)} MB",
                                         style: const TextStyle(
-                                          fontSize: 10,
-                                        ),
+                                            fontSize: 10,
+                                            color: AppColors.mainTextColor2),
                                       ),
                                       children: [
                                         _infoTile("Executable Path",
                                             program.executablePath),
-                                        _infoTile(
-                                            "Started",
-                                            program.startTime
-                                                .toIso8601String()),
+                                        _infoTile("Started", program.startTime),
                                         _infoTile("Thread Count",
                                             program.threadCount.toString()),
                                         _infoTile("User", program.user),
                                         _infoTile("State", program.state),
-                                        _infoTile("Window Title",
-                                            program.windowTitle),
+                                        // _infoTile("Window Title",
+                                        //     program.windowTitle),
                                       ],
                                     ),
                                   ),
@@ -132,14 +142,14 @@ class ActiveProgramsList extends StatelessWidget {
             Expanded(
               child: Text(
                 "$title: ",
-                style: const TextStyle(fontSize: 13),
+                style: TextStyle(fontSize: 13, color: AppColors.mainTextColor2),
                 overflow: TextOverflow.clip,
               ),
             ),
             Expanded(
               child: Text(
                 value,
-                style: const TextStyle(fontSize: 11),
+                style: TextStyle(fontSize: 11, color: Colors.white70),
               ),
             ),
           ],

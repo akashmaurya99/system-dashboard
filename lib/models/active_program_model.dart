@@ -4,7 +4,7 @@ class ProgramInfo {
   final double cpuUsage;
   final int memoryUsage;
   final String executablePath;
-  final DateTime startTime;
+  final String startTime;
   final int threadCount;
   final int parentPid;
   final String user;
@@ -32,7 +32,7 @@ class ProgramInfo {
       cpuUsage: json['cpuUsage'].toDouble(),
       memoryUsage: json['memoryUsage'],
       executablePath: json['executablePath'],
-      startTime: DateTime.parse(json['startTime']),
+      startTime: json['startTime'],
       threadCount: json['threadCount'],
       parentPid: json['parentPid'],
       user: json['user'],

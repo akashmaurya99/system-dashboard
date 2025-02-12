@@ -15,15 +15,15 @@ class StorageLegend extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.white70)),
+                color: AppColors.mainTextColor2)),
         SizedBox(height: 10),
-        Indicator(color: AppColors.contentColorBlue, text: 'System Data'),
-        SizedBox(height: 4),
-        Indicator(color: AppColors.contentColorYellow, text: 'User Data'),
-        SizedBox(height: 4),
-        Indicator(color: AppColors.contentColorPurple, text: 'App Data'),
-        SizedBox(height: 4),
-        Indicator(color: AppColors.contentColorGreen, text: 'Others'),
+        Indicator(color: AppColors.contentColorBlue, text: 'Used Storage'),
+        // SizedBox(height: 4),
+        // Indicator(color: AppColors.contentColorYellow, text: 'User Data'),
+        // SizedBox(height: 4),
+        // Indicator(color: AppColors.contentColorPurple, text: 'App Data'),
+        // SizedBox(height: 4),
+        Indicator(color: AppColors.contentColorGrey, text: 'Free Storage'),
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/ram_info_provider.dart';
+import '../../theme/app_color.dart';
 import '../../theme/container_color.dart';
 import '../../theme/container_radius.dart';
 import '../../utils/dynamic_size.dart';
@@ -41,8 +42,8 @@ class RamInfoContainer extends StatelessWidget {
                     Text(
                       "RAM Info",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.mainTextColor2),
                     ),
                   ],
                 ),
@@ -73,9 +74,15 @@ class RamInfoContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: AppColors.mainTextColor2)),
           Text(value,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: AppColors.mainTextColor2)),
         ],
       ),
     );

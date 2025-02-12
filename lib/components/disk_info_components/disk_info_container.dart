@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/disk_info_provider.dart';
+import '../../theme/app_color.dart';
 import '../../theme/container_color.dart';
 import '../../theme/container_radius.dart';
 import '../../utils/dynamic_size.dart';
@@ -41,10 +42,12 @@ class DiskInfoContainer extends StatelessWidget {
                       const SizedBox(width: 8),
                       Text(
                         "Disk Info",
-                        style:
-                            Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.mainTextColor2),
                       ),
                     ],
                   ),
@@ -90,12 +93,18 @@ class DiskInfoContainer extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+                color: AppColors.mainTextColor2),
           ),
           Flexible(
             child: Text(
               value,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+              style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: AppColors.mainTextColor2),
               textAlign: TextAlign.right,
             ),
           ),

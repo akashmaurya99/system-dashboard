@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:provider/provider.dart';
-import '../../provider/battery_info_provider.dart';
-import '../../provider/installed_apps_provider.dart';
+import '../../provider/active_program_provider.dart';
+import '../../provider/ram_provider.dart';
+import '../../provider/storage_provider.dart';
 import '../../widgets/active_programs_lists.dart';
 import '../../widgets/cpu_uses_chart.dart';
 import '../../widgets/gpu_uses_chart.dart';
@@ -17,20 +18,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late Future<void> _loadAllDataFuture;
+
   @override
   void initState() {
     super.initState();
-    // Automatically fetch installed apps after the first frame.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Provider.of<InstalledAppsProvider>(context, listen: false)
-          .fetchInstalledApps();
-    });
 
-    // Automatically fetch system info after the first frame.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Provider.of<BatteryInfoProvider>(context, listen: false)
-          .loadBatteryInfo();
-    });
+    // Delay the data loading until after the build is complete.
+    _loadAllDataFuture = Future.delayed(Duration.zero, _loadAllData);
+  }
+
+  Future<void> _loadAllData() async {
+    await Future.wait<bool>([
+      Future<bool>.sync(() {
+        Provider.of<RunningProgramProvider>(context, listen: false)
+            .fetchRunningProcesses();
+        return true;
+      }),
+      Future<bool>.sync(() {
+        Provider.of<StorageProvider>(context, listen: false).fetchStorageData();
+        return true;
+      }),
+      Future<bool>.sync(() {
+        Provider.of<RamProvider>(context, listen: false).fetchRamInfo();
+        return true;
+      }),
+    ]);
   }
 
   @override
@@ -42,62 +55,62 @@ class _HomePageState extends State<HomePage> {
       ),
       children: [
         ContentArea(builder: (context, scrollController) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return SingleChildScrollView(
-                  controller: scrollController,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // The StoragePiChart's height is set relative to the available space.
-                          // SystemInfoContainer(),
-                          SizedBox(
-                            height: 20,
-                          ),
-
-                          Row(
-                            children: [
-                              StoragePieChart(),
-                              SizedBox(
-                                width: 20,
+          return FutureBuilder(
+            future: _loadAllDataFuture,
+            builder: (context, snapshot) {
+              // Show a loading indicator until the future completes.
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                // In case of error, display an error message.
+                return Center(child: Text("Error: ${snapshot.error}"));
+              } else {
+                // Data has loaded; build the main content.
+                return Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return SingleChildScrollView(
+                        controller: scrollController,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(height: 20),
+                                Row(
+                                  children: const [
+                                    StoragePieChart(),
+                                    SizedBox(width: 20),
+                                    RamPieChart(),
+                                  ],
+                                ),
+                                const SizedBox(height: 20),
+                                Row(
+                                  children: const [
+                                    CPUUsageChart(),
+                                    SizedBox(width: 20),
+                                    GPUUsageChart(),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 25),
+                            Flexible(
+                              child: SizedBox(
+                                height: constraints.maxHeight,
+                                child: const ActiveProgramsList(),
                               ),
-                              RamPieChart(),
-                            ],
-                          ),
-                          // Add more responsive widgets here if needed
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            children: [
-                              CPUUsageChart(),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              GPUUsageChart(),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 25,
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                          height: constraints.maxHeight, // Define height
-                          child: ActiveProgramsList(),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 );
-              },
-            ),
+              }
+            },
           );
         }),
       ],

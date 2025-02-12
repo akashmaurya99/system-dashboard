@@ -23,42 +23,35 @@ import 'theme/theme_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Must add this line for Windows and Linux
   await windowManager.ensureInitialized();
 
   // Fetch the primary display's size
   Display primaryDisplay = await screenRetriever.getPrimaryDisplay();
   final screenSize = primaryDisplay.size;
 
-  // Calculate a size slightly smaller than full screen with a good aspect ratio
-  // Here, we're reducing the dimensions by 5% on each side
-
-  // Calculate a size slightly smaller than full screen with a good aspect ratio
-  // Here, we're reducing the dimensions by 5% on each side
+  // Calculate a size slightly smaller than full screen
   final reducedWidth = screenSize.width * 0.9;
   final reducedHeight = screenSize.height * 0.9;
 
-  final Size initialSize = Size(
-    reducedWidth,
-    reducedHeight,
-  );
+  final Size initialSize = Size(reducedWidth, reducedHeight);
 
   WindowOptions windowOptions = WindowOptions(
     size: initialSize,
-    // Minimum size can be slightly smaller than the initial size
     minimumSize: Size(initialSize.width * 0.8, initialSize.height * 0.8),
     titleBarStyle: TitleBarStyle.hidden,
-    backgroundColor:
-        Colors.transparent, // Make the window background transparent
+    backgroundColor: Colors.transparent,
   );
 
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
+  // Set window size before showing it
+  await windowManager.setSize(initialSize);
+
+  await windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await Future.delayed(Duration(milliseconds: 100)); // Ensure settings apply
     await windowManager.show();
     await windowManager.focus();
   });
-  runApp(
-    AppEnteryPoint(),
-  );
+
+  runApp(AppEnteryPoint());
 }
 
 class AppEnteryPoint extends StatelessWidget {
@@ -74,7 +67,7 @@ class AppEnteryPoint extends StatelessWidget {
               ChangeNotifierProvider(create: (_) => GPUUsageProvider()),
               ChangeNotifierProvider(create: (_) => StorageProvider()),
               ChangeNotifierProvider(create: (_) => RamProvider()),
-              ChangeNotifierProvider(create: (_) => ProgramProvider()),
+              ChangeNotifierProvider(create: (_) => RunningProgramProvider()),
               ChangeNotifierProvider(create: (_) => SystemInfoProvider()),
               ChangeNotifierProvider(create: (_) => InstalledAppsProvider()),
               ChangeNotifierProvider(create: (_) => RamInfoProvider()),

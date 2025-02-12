@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:system_info/theme/container_color.dart';
 import 'package:system_info/theme/container_radius.dart';
 import '../provider/installed_apps_provider.dart';
+import '../theme/app_color.dart';
 
 class InstalledAppsPage extends StatefulWidget {
   const InstalledAppsPage({super.key});
@@ -41,7 +42,7 @@ class _InstalledAppsPageState extends State<InstalledAppsPage> {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: AppColors.mainTextColor2,
                     ),
                   ),
                 ],
@@ -52,7 +53,8 @@ class _InstalledAppsPageState extends State<InstalledAppsPage> {
               // Always show the search field at the top.
               MacosTextField(
                 placeholder: 'Search Apps',
-                placeholderStyle: const TextStyle(color: Colors.white),
+                placeholderStyle:
+                    const TextStyle(color: AppColors.mainTextColor2),
                 onChanged: (query) {
                   provider.setSearchQuery(query);
                 },

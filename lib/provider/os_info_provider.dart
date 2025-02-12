@@ -26,7 +26,7 @@ class OSInfoProvider extends ChangeNotifier {
   }
 
   /// Loads OS info from the native FFI call.
-  void loadOsInfo() {
+  Future<void> loadOsInfo() async {
     // Retrieve the JSON string from the native library.
     final String osInfoJson = MacSystemInfo().getOsInfo();
 

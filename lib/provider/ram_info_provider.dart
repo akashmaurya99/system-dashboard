@@ -26,7 +26,7 @@ class RamInfoProvider extends ChangeNotifier {
   }
 
   /// Loads RAM info from the native FFI call, parses the JSON, and updates the provider.
-  void loadRamInfo() {
+  Future<void> loadRamInfo() async {
     // Call the native FFI function to get a JSON string.
     // (Make sure your FFI binding function name matches—here we assume it's `getRamInfo()`.)
     final String ramInfoJson = MacSystemInfo().getRamInfo();

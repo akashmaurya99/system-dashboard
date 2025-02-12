@@ -6,7 +6,18 @@ import 'package:ffi/ffi.dart';
 final DynamicLibrary _lib = () {
   if (Platform.isMacOS) {
     // Get the absolute path of the library inside the Flutter macOS bundle
-    return DynamicLibrary.open("libmac_system_info.dylib");
+    // return DynamicLibrary.open("libmac_system_info.dylib");
+    // Platform.resolvedExecutable gives the full path to the executable.
+    // Its parent directory is the folder containing your executable (i.e. Contents/MacOS).
+
+    final String exePath = Platform.resolvedExecutable;
+    final String directory = File(exePath).parent.path;
+    final String libPath = '$directory/libmac_system_info.dylib';
+
+    // Optionally, print the path to debug:
+    // print('Loading library from: $libPath');
+
+    return DynamicLibrary.open(libPath);
   } else {
     throw UnsupportedError('This FFI module only supports macOS.');
   }

@@ -15,7 +15,7 @@ class RamLegend extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.white70)),
+                color: AppColors.mainTextColor2)),
         SizedBox(height: 10),
         Indicator(color: AppColors.contentColorBlue, text: 'Used RAM'),
         SizedBox(height: 4),
@@ -23,7 +23,7 @@ class RamLegend extends StatelessWidget {
         // SizedBox(height: 4),
         // Indicator(color: AppColors.contentColorPurple, text: 'App Data'),
         // SizedBox(height: 4),
-        Indicator(color: AppColors.contentColorGreen, text: 'Free RAM'),
+        Indicator(color: AppColors.contentColorGrey, text: 'Free RAM'),
       ],
     );
   }

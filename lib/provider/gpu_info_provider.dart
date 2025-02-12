@@ -27,7 +27,7 @@ class GpuInfoProvider extends ChangeNotifier {
 
   /// Loads GPU info from the native FFI call, decodes the JSON,
   /// and updates the provider.
-  void loadGpuInfo() {
+  Future<void> loadGpuInfo() async {
     // Retrieve the JSON string from your native library.
     // (Assuming MacSystemInfo().getGpuInfo() returns the JSON string.)
     final String gpuJson = MacSystemInfo().getGpuInfo();

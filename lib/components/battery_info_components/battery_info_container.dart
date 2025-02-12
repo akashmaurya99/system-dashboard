@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/battery_info_provider.dart';
+import '../../theme/app_color.dart';
 import '../../theme/container_color.dart';
 import '../../theme/container_radius.dart';
 import '../../utils/dynamic_size.dart';
@@ -40,8 +41,8 @@ class BatteryInfoContainer extends StatelessWidget {
                     Text(
                       "Battery Info",
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.mainTextColor2),
                     ),
                   ],
                 ),
@@ -82,12 +83,18 @@ class BatteryInfoContainer extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+                color: AppColors.mainTextColor2),
           ),
           Flexible(
             child: Text(
               value,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+              style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: AppColors.mainTextColor2),
               textAlign: TextAlign.right,
             ),
           ),

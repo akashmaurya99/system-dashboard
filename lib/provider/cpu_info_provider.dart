@@ -31,7 +31,7 @@ class CPUInfoProvider extends ChangeNotifier {
 
   /// Loads CPU info from the native FFI call, decodes the JSON,
   /// and updates the provider.
-  void loadCpuInfo() {
+  Future<void> loadCpuInfo() async {
     // Get the JSON string from the native library.
     // (Assuming MacSystemInfo().getCpuInfo() returns the JSON string.)
     final String cpuJson = MacSystemInfo().getCpuInfo();
