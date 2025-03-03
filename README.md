@@ -193,6 +193,7 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## Future Enhancements
+- This Version conatains the implementation only for mac so implement it for windows also.
 - Add more detailed process monitoring
 - Implement a notification system for system health alerts
 - Introduce plugin support for additional system insights
