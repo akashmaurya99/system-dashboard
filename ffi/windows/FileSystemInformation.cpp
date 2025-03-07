@@ -190,6 +190,27 @@ json checkFilePermissions(const string &filePath) {
     };
 }
 
+// Function to List Hidden Files in a Directory
+json listHiddenFiles(const string &directory) {
+    json hiddenFiles = json::array();
+    WIN32_FIND_DATAA findFileData;
+    HANDLE hFind = FindFirstFileA((directory + "\\*").c_str(), &findFileData);
+
+    if (hFind == INVALID_HANDLE_VALUE) {
+        return {{"Error", "No files found or access denied"}};
+    }
+
+    do {
+        if (findFileData.dwFileAttributes & FILE_ATTRIBUTE_HIDDEN) {
+            hiddenFiles.push_back(findFileData.cFileName);
+        }
+    } while (FindNextFileA(hFind, &findFileData));
+
+    FindClose(hFind);
+    return hiddenFiles;
+}
+
+
 int main() {
     json result;
 
