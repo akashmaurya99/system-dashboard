@@ -170,6 +170,26 @@ json getDriveSpace() {
 }
 
 
+
+// Function to Check File Permissions
+json checkFilePermissions(const string &filePath) {
+    DWORD attributes = GetFileAttributesA(filePath.c_str());
+    if (attributes == INVALID_FILE_ATTRIBUTES) {
+        return {{"Error", "Unable to access file"}};
+    }
+
+    json permissions;
+    if (attributes & FILE_ATTRIBUTE_READONLY) permissions["Read-Only"] = true;
+    if (attributes & FILE_ATTRIBUTE_HIDDEN) permissions["Hidden"] = true;
+    if (attributes & FILE_ATTRIBUTE_SYSTEM) permissions["System"] = true;
+    if (!(attributes & FILE_ATTRIBUTE_READONLY)) permissions["Writable"] = true;
+    
+    return {
+        {"File", filePath},
+        {"Permissions", permissions}
+    };
+}
+
 int main() {
     json result;
 
