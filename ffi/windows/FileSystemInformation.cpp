@@ -128,6 +128,25 @@ string getFileSystemType(const string &drive) {
     }
     return "Unknown";
 } 
+
+
+// Function to Get Mounted Drives
+json getMountedDrives() {
+    json mountedDrives = json::array();
+    DWORD drives = GetLogicalDrives();
+    
+    for (char letter = 'A'; letter <= 'Z'; ++letter) {
+        if (drives & (1 << (letter - 'A'))) {
+            string drive = string(1, letter) + ":\\"; 
+            mountedDrives.push_back({
+                {"Drive", drive},
+                {"FileSystem", getFileSystemType(drive)}
+            });
+        }
+    }
+    return mountedDrives;
+}
+
 int main() {
     json result;
 
