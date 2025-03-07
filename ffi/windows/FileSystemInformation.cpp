@@ -147,6 +147,29 @@ json getMountedDrives() {
     return mountedDrives;
 }
 
+// Function to Get Total & Free Space of Each Drive
+json getDriveSpace() {
+    json driveSpace = json::array();
+    DWORD drives = GetLogicalDrives();
+    
+    for (char letter = 'A'; letter <= 'Z'; ++letter) {
+        if (drives & (1 << (letter - 'A'))) {
+            string drive = string(1, letter) + ":\\"; 
+            ULARGE_INTEGER freeBytes, totalBytes, totalFreeBytes;
+            
+            if (GetDiskFreeSpaceExA(drive.c_str(), &freeBytes, &totalBytes, &totalFreeBytes)) {
+                driveSpace.push_back({
+                    {"Drive", drive},
+                    {"Total_GB", totalBytes.QuadPart / (1024 * 1024 * 1024)},
+                    {"Free_GB", freeBytes.QuadPart / (1024 * 1024 * 1024)}
+                });
+            }
+        }
+    }
+    return driveSpace;
+}
+
+
 int main() {
     json result;
 
