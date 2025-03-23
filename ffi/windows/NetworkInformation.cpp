@@ -1,10 +1,11 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
 #include <winsock2.h>
 #include <iphlpapi.h>
-#include <vector>
 #include <windows.h>
 #include <Wlanapi.h>
-#include <fstream>
 
 #pragma comment(lib, "Ws2_32.lib")
 #pragma comment(lib, "iphlpapi.lib")
@@ -12,156 +13,159 @@
 
 using namespace std;
 
-void GetHostName() {
-    char hostname[256];
-    if (gethostname(hostname, sizeof(hostname)) == 0) {
-        cout << "Hostname: " << hostname << endl;
-    } else {
-        cerr << "Failed to get hostname" << endl;
+// Structure to hold network information
+struct NetworkInfo {
+    string hostname;
+    string localIP;
+    string publicIP;
+    vector<string> macAddresses;
+    vector<string> interfaces;
+    string wifiSSID;
+    int wifiSignal;
+};
+
+// Helper: Execute command and return output
+static string execCommand(const char* cmd) {
+    char buffer[256];
+    string result;
+    FILE* pipe = _popen(cmd, "r");
+    if (!pipe) return "ERROR";
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        result += buffer;
+    }
+    _pclose(pipe);
+    return result;
+}
+
+// Helper: Get formatted MAC address
+static string formatMAC(BYTE* addr, DWORD length) {
+    stringstream ss;
+    for (DWORD i = 0; i < length; i++) {
+        ss << hex << setw(2) << setfill('0') << (int)addr[i];
+        if (i != length - 1) ss << ":";
+    }
+    return ss.str();
+}
+
+static void getHostname(NetworkInfo& info) {
+    char buffer[256];
+    if (gethostname(buffer, sizeof(buffer)) == 0) {
+        info.hostname = buffer;
     }
 }
 
-void GetLocalIPAddress() {
+static void getLocalIP(NetworkInfo& info) {
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
     
     char hostname[256];
-    gethostname(hostname, sizeof(hostname));
-    
-    struct hostent* host = gethostbyname(hostname);
-    if (host) {
-        cout << "Local IP Address: " << inet_ntoa(*((struct in_addr*)host->h_addr_list[0])) << endl;
-    } else {
-        cerr << "Failed to get local IP address" << endl;
+    if (gethostname(hostname, sizeof(hostname)) {
+        WSACleanup();
+        return;
     }
 
+    hostent* host = gethostbyname(hostname);
+    if (host && host->h_addr_list[0]) {
+        info.localIP = inet_ntoa(*(in_addr*)host->h_addr_list[0]);
+    }
     WSACleanup();
 }
 
-void GetPublicIPAddress() {
-    system("curl -s ifconfig.me > public_ip.txt");
-    ifstream file("public_ip.txt");
-    string public_ip;
-    if (file >> public_ip) {
-        cout << "Public IP Address: " << public_ip << endl;
-    } else {
-        cerr << "Failed to get public IP address" << endl;
+static void getPublicIP(NetworkInfo& info) {
+    string ip = execCommand("curl -s ifconfig.me");
+    if (!ip.empty() && ip.find("ERROR") == string::npos) {
+        info.publicIP = ip;
     }
-    file.close();
-    system("del public_ip.txt");  // Delete the temp file
 }
 
-void GetMACAddress() {
-    IP_ADAPTER_INFO adapterInfo[16];
-    DWORD size = sizeof(adapterInfo);
-    if (GetAdaptersInfo(adapterInfo, &size) == ERROR_SUCCESS) {
-        PIP_ADAPTER_INFO adapter = adapterInfo;
+static void getMACAddresses(NetworkInfo& info) {
+    IP_ADAPTER_INFO adapters[16];
+    DWORD size = sizeof(adapters);
+    if (GetAdaptersInfo(adapters, &size) == ERROR_SUCCESS) {
+        PIP_ADAPTER_INFO adapter = adapters;
         while (adapter) {
-            cout << "MAC Address: ";
-            for (UINT i = 0; i < adapter->AddressLength; i++) {
-                printf("%02X", adapter->Address[i]);
-                if (i < adapter->AddressLength - 1) cout << ":";
+            info.macAddresses.push_back(formatMAC(adapter->Address, adapter->AddressLength));
+            adapter = adapter->Next;
+        }
+    }
+}
+
+static void getNetworkInterfaces(NetworkInfo& info) {
+    IP_ADAPTER_INFO adapters[16];
+    DWORD size = sizeof(adapters);
+    if (GetAdaptersInfo(adapters, &size) == ERROR_SUCCESS) {
+        PIP_ADAPTER_INFO adapter = adapters;
+        while (adapter) {
+            string desc = adapter->Description;
+            string ip = adapter->IpAddressList.IpAddress.String;
+            info.interfaces.push_back(desc + " (" + ip + ")");
+            adapter = adapter->Next;
+        }
+    }
+}
+
+static void getWifiInfo(NetworkInfo& info) {
+    HANDLE hClient = NULL;
+    DWORD version = 0;
+    if (WlanOpenHandle(2, NULL, &version, &hClient) != ERROR_SUCCESS) return;
+
+    PWLAN_INTERFACE_INFO_LIST ifList = NULL;
+    if (WlanEnumInterfaces(hClient, NULL, &ifList) == ERROR_SUCCESS && ifList->dwNumberOfItems > 0) {
+        PWLAN_AVAILABLE_NETWORK_LIST netList = NULL;
+        GUID guid = ifList->InterfaceInfo[0].InterfaceGuid;
+        if (WlanGetAvailableNetworkList(hClient, &guid, 0, NULL, &netList) == ERROR_SUCCESS) {
+            if (netList->dwNumberOfItems > 0) {
+                info.wifiSSID = (char*)netList->Network[0].dot11Ssid.ucSSID;
+                info.wifiSignal = netList->Network[0].wlanSignalQuality;
             }
-            cout << endl;
-            adapter = adapter->Next;
+            WlanFreeMemory(netList);
         }
-    } else {
-        cerr << "Failed to get MAC address" << endl;
+        WlanFreeMemory(ifList);
     }
-}
-
-void GetActiveNetworkInterfaces() {
-    IP_ADAPTER_INFO adapterInfo[16];
-    DWORD size = sizeof(adapterInfo);
-    if (GetAdaptersInfo(adapterInfo, &size) == ERROR_SUCCESS) {
-        PIP_ADAPTER_INFO adapter = adapterInfo;
-        cout << "Active Network Interfaces:" << endl;
-        while (adapter) {
-            cout << "  - " << adapter->Description << " (" << adapter->IpAddressList.IpAddress.String << ")" << endl;
-            adapter = adapter->Next;
-        }
-    } else {
-        cerr << "Failed to get active network interfaces" << endl;
-    }
-}
-
-void GetWiFiSSID() {
-    HANDLE hClient = NULL;
-    DWORD dwMaxClient = 2, dwCurVersion = 0;
-    DWORD dwResult = WlanOpenHandle(dwMaxClient, NULL, &dwCurVersion, &hClient);
-    if (dwResult != ERROR_SUCCESS) {
-        cerr << "Failed to open WLAN handle" << endl;
-        return;
-    }
-
-    PWLAN_INTERFACE_INFO_LIST pIfList = NULL;
-    if (WlanEnumInterfaces(hClient, NULL, &pIfList) != ERROR_SUCCESS) {
-        cerr << "Failed to enumerate Wi-Fi interfaces" << endl;
-        return;
-    }
-
-    if (pIfList->dwNumberOfItems == 0) {
-        cout << "No Wi-Fi interfaces found" << endl;
-        return;
-    }
-
-    PWLAN_AVAILABLE_NETWORK_LIST pNetworkList = NULL;
-    if (WlanGetAvailableNetworkList(hClient, &pIfList->InterfaceInfo[0].InterfaceGuid, 0, NULL, &pNetworkList) != ERROR_SUCCESS) {
-        cerr << "Failed to get Wi-Fi network list" << endl;
-        return;
-    }
-
-    cout << "Wi-Fi SSID: " << pNetworkList->Network[0].dot11Ssid.ucSSID << endl;
-    WlanFreeMemory(pNetworkList);
-    WlanFreeMemory(pIfList);
     WlanCloseHandle(hClient, NULL);
 }
 
-void GetWiFiSignalStrength() {
-    HANDLE hClient = NULL;
-    DWORD dwMaxClient = 2, dwCurVersion = 0;
-    DWORD dwResult = WlanOpenHandle(dwMaxClient, NULL, &dwCurVersion, &hClient);
-    if (dwResult != ERROR_SUCCESS) {
-        cerr << "Failed to open WLAN handle" << endl;
-        return;
+// Convert NetworkInfo to JSON format
+static string networkInfoToJSON(const NetworkInfo& info) {
+    stringstream json;
+    json << "{\n";
+    json << "  \"hostname\": \"" << info.hostname << "\",\n";
+    json << "  \"local_ip\": \"" << info.localIP << "\",\n";
+    json << "  \"public_ip\": \"" << info.publicIP << "\",\n";
+    
+    json << "  \"mac_addresses\": [";
+    for (size_t i = 0; i < info.macAddresses.size(); i++) {
+        json << "\"" << info.macAddresses[i] << "\"";
+        if (i < info.macAddresses.size() - 1) json << ", ";
     }
-
-    PWLAN_INTERFACE_INFO_LIST pIfList = NULL;
-    if (WlanEnumInterfaces(hClient, NULL, &pIfList) != ERROR_SUCCESS) {
-        cerr << "Failed to enumerate Wi-Fi interfaces" << endl;
-        return;
+    json << "],\n";
+    
+    json << "  \"interfaces\": [";
+    for (size_t i = 0; i < info.interfaces.size(); i++) {
+        json << "\"" << info.interfaces[i] << "\"";
+        if (i < info.interfaces.size() - 1) json << ", ";
     }
-
-    if (pIfList->dwNumberOfItems == 0) {
-        cout << "No Wi-Fi interfaces found" << endl;
-        return;
-    }
-
-    PWLAN_AVAILABLE_NETWORK_LIST pNetworkList = NULL;
-    if (WlanGetAvailableNetworkList(hClient, &pIfList->InterfaceInfo[0].InterfaceGuid, 0, NULL, &pNetworkList) != ERROR_SUCCESS) {
-        cerr << "Failed to get Wi-Fi network list" << endl;
-        return;
-    }
-
-    cout << "Wi-Fi Signal Strength: " << (int)pNetworkList->Network[0].wlanSignalQuality << "%" << endl;
-    WlanFreeMemory(pNetworkList);
-    WlanFreeMemory(pIfList);
-    WlanCloseHandle(hClient, NULL);
+    json << "],\n";
+    
+    json << "  \"wifi\": {\n";
+    json << "    \"ssid\": \"" << info.wifiSSID << "\",\n";
+    json << "    \"signal_strength\": " << info.wifiSignal << "\n";
+    json << "  }\n";
+    json << "}";
+    
+    return json.str();
 }
 
 int main() {
-    cout << "==========================\n";
-    cout << "   Network Information    \n";
-    cout << "==========================\n";
-
-    GetHostName();
-    GetLocalIPAddress();
-    GetPublicIPAddress();
-    GetMACAddress();
-    GetActiveNetworkInterfaces();
-    GetWiFiSSID();
-    GetWiFiSignalStrength();
-
-    system("pause");
+    NetworkInfo info;
+    
+    getHostname(info);
+    getLocalIP(info);
+    getPublicIP(info);
+    getMACAddresses(info);
+    getNetworkInterfaces(info);
+    getWifiInfo(info);
+    
+    cout << networkInfoToJSON(info) << endl;
     return 0;
 }
