@@ -129,7 +129,7 @@ static string generateOsInfoJson() {
 }
 
 // FFI-Compatible wrapper: returns a C-style string that must be freed by the caller.
-extern "C" __attribute__((visibility("default"))) char* getOsInfoJson() {
+char* getOsInfoJson() {
     string result = generateOsInfoJson();
     char* cstr = (char*)malloc(result.size() + 1);
     if (cstr) {

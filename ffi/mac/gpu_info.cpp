@@ -171,7 +171,7 @@ static string extract_gpu_info() {
 }
 
 // Function to get GPU utilization in percentage (do not change this function).
-static double getGPUUsage() {
+ double getGPUUsage() {
     static int prevBusyCount = 0;
     
     // Extract fBusyCount using ioreg.
@@ -197,7 +197,7 @@ static double getGPUUsage() {
 }
 
 // FFI-Compatible Wrappers.
-extern "C" __attribute__((visibility("default"))) char* getGPUInfo() {
+char* getGPUInfo() {
     string result = extract_gpu_info();
     char* cstr = (char*)malloc(result.size() + 1);
     if (cstr) {
@@ -206,6 +206,3 @@ extern "C" __attribute__((visibility("default"))) char* getGPUInfo() {
     return cstr;
 }
 
-extern "C" __attribute__((visibility("default"))) double calculateGPUUsage() {
-    return getGPUUsage();
-}

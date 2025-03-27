@@ -127,7 +127,7 @@ string getCompleteDiskInfo() {
 
 // Exposed FFI function
 
-extern "C" __attribute__((visibility("default"))) char* getDiskInfo() {
+ char* getDiskInfo() {
     string result = getCompleteDiskInfo();
     char* cstr = (char*)malloc(result.size() + 1);
     if (cstr) {

@@ -1,3 +1,19 @@
 {
-    "cmake.sourceDirectory": "/Users/akashmaurya/Documents/system_info/windows/flutter"
+    "cmake.sourceDirectory": "/Users/akashmaurya/Documents/system_info/windows/flutter",
+    "files.associations": {
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "queue": "cpp",
+        "regex": "cpp",
+        "stack": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp"
+    }
 }

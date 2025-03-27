@@ -146,7 +146,7 @@ static string getInstructionSet() {
 
 
 // Function to return CPU information in JSON format (matching your Dart model)
-extern "C" __attribute__((visibility("default"))) char* getJsonCpuData() {
+ char* getJsonCpuData() {
     stringstream jsonStream;
 
     // Gather information
@@ -188,7 +188,3 @@ extern "C" __attribute__((visibility("default"))) char* getJsonCpuData() {
     return strdup_cstr(jsonStream.str());
 }
 
-// Expose real-time CPU usage function
-extern "C" __attribute__((visibility("default"))) double getCPUUsageExtern() {
-    return getCPUUsage();
-}

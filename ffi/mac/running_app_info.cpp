@@ -258,7 +258,7 @@ static string getRunningProcessesJSON_Internal() {
 //
 // The caller on the Flutter side is responsible for freeing the returned memory.
 //
-extern "C" __attribute__((visibility("default")))
+
 char* getRunningProcessesJSON() {
     string result = getRunningProcessesJSON_Internal();
     char* cstr = (char*)malloc(result.size() + 1);
@@ -268,7 +268,7 @@ char* getRunningProcessesJSON() {
     return cstr;
 }
 
-extern "C" __attribute__((visibility("default")))
+
 char* getInstalledApplicationsJSON() {
     string result = getInstalledApplicationsJSON_Internal();
     char* cstr = (char*)malloc(result.size() + 1);

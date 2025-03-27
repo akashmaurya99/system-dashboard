@@ -230,7 +230,7 @@ static string generateRAMInfoJSON() {
 }
 
 // FFI-Compatible Wrapper: Returns a malloc'ed C-string which must be freed by the caller.
-extern "C" __attribute__((visibility("default"))) char* getRAMInfoJSON() {
+ char* getRAMInfoJSON() {
     string result = generateRAMInfoJSON();
     char* cstr = (char*)malloc(result.size() + 1);
     if (cstr) {

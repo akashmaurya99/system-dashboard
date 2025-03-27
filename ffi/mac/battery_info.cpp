@@ -249,7 +249,7 @@ static string displayBatteryInfo() {
 }
 
 // Extern "C" function that returns a pointer to a C-style string (which should be freed by the caller).
-extern "C" __attribute__((visibility("default"))) char* getBatteryInfo() {
+char* getBatteryInfo() {
     std::string data = displayBatteryInfo();
     char* cstr = (char*)malloc(data.size() + 1);
     if (cstr) {

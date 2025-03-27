@@ -17,17 +17,17 @@ extern "C" {
 
 // Get Battery Info
 __attribute__((visibility("default"))) char* batteryInfo() {
-    return strdup_cstr(getBatteryInfo()); // Calls correct implementation
+    return getBatteryInfo(); // Calls implementation from battery_info.cpp
 }
 
 // Get CPU Info
 __attribute__((visibility("default"))) char* cpuData() {
-    return strdup_cstr(getJsonCpuData()); // Calls correct implementation
+    return getJsonCpuData(); // Calls correct implementation
 }
 
 // Get real-time CPU Usage
 __attribute__((visibility("default"))) double cpuUsages() {
-    return getCPUUsageExtern(); // Calls correct implementation
+    return getCPUUsage(); // Calls correct implementation
 }
 
 // // Get Disk Usage
@@ -42,37 +42,37 @@ __attribute__((visibility("default"))) double cpuUsages() {
 
 // Get Disk Details
 __attribute__((visibility("default"))) char* diskDetails() {
-    return strdup_cstr(getDiskInfo()); // Calls correct implementation
+    return getDiskInfo(); // Calls correct implementation
 }
 
 // Get GPU Info
 __attribute__((visibility("default"))) char* gpuInfo() {
-    return strdup_cstr(getGPUInfo()); // Calls correct implementation
+    return getGPUInfo(); // Calls correct implementation
 }
 
 // Get GPU Usage
 __attribute__((visibility("default"))) double gpuUsages() {
-    return calculateGPUUsage(); // Calls correct implementation
+    return getGPUUsage(); // Calls correct implementation
 }
 
 // Get OS Info
 __attribute__((visibility("default"))) char* osInfo() {
-    return strdup_cstr(getOsInfoJson()); // Calls correct implementation
+    return getOsInfoJson(); // Calls correct implementation
 }
 
 // Get RAM Info
 __attribute__((visibility("default"))) char* ramInfo() {
-    return strdup_cstr(getRAMInfoJSON()); // Calls correct implementation
+    return getRAMInfoJSON(); // Calls correct implementation
 }
 
 // Get Installed Applications
 __attribute__((visibility("default"))) char* installedApplications() {
-    return strdup_cstr(getInstalledApplicationsJSON()); // Calls correct implementation
+    return getInstalledApplicationsJSON(); // Calls correct implementation
 }
 
 // Get Running Processes
 __attribute__((visibility("default"))) char* runningProcesses() {
-    return strdup_cstr(getRunningProcessesJSON()); // Calls correct implementation
+    return getRunningProcessesJSON(); // Calls correct implementation
 }
 
 // Free allocated memory for FFI
